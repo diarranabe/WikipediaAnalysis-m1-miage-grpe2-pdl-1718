@@ -1,0 +1,39 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@1326733911473862273403","name":"Q29tcGFyaXNvbl9vZl9wcm9ncmFtbWluZ19sYW5ndWFnZXNfKHN0cmluZ19mdW5jdGlvbnMpIC0gRm9ybWF0","generated_KMF_ID":"1326733911473862273403","productsKey":["features[7719125921473862273403]"],"products":[
+{"class":"org.opencompare.model.Product@19740637381473862273403","generated_KMF_ID":"19740637381473862273403","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@8303597351473862273403","content":"RGVzY3JpcHRpb24=","rawContent":"RGVzY3JpcHRpb24=","generated_KMF_ID":"8303597351473862273403","feature":["features[7719125921473862273403]"],"product":["products[19740637381473862273403]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@17531156521473862273403","value":"RGVzY3JpcHRpb24=","generated_KMF_ID":"17531156521473862273403"}
+]}
+,
+{"class":"org.opencompare.model.Cell@2074347471473862273403","content":"UmV0dXJucyB0aGUgZm9ybWF0dGVkIHN0cmluZyByZXByZXNlbnRhdGlvbiBvZiBvbmUgb3IgbW9yZSBpdGVtcy4=","rawContent":"UmV0dXJucyB0aGUgZm9ybWF0dGVkIHN0cmluZyByZXByZXNlbnRhdGlvbiBvZiBvbmUgb3IgbW9yZSBpdGVtcy4=","generated_KMF_ID":"2074347471473862273403","feature":["features[45026941473862273403]"],"product":["products[19740637381473862273403]"],"interpretation":[
+{"class":"org.opencompare.model.Multiple@16940870051473862273403","generated_KMF_ID":"16940870051473862273403","subvalues":[
+{"class":"org.opencompare.model.StringValue@4769174181473862273403","value":"bW9yZSBpdGVtcy4=","generated_KMF_ID":"4769174181473862273403"}
+,
+{"class":"org.opencompare.model.StringValue@15475903481473862273403","value":"UmV0dXJucyB0aGUgZm9ybWF0dGVkIHN0cmluZyByZXByZXNlbnRhdGlvbiBvZiBvbmU=","generated_KMF_ID":"15475903481473862273403"}
+]}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@7719125921473862273403","name":"RGVmaW5pdGlvbg==","generated_KMF_ID":"7719125921473862273403","parentGroup":[],"cells":["products[19740637381473862273403]/cells[8303597351473862273403]"]}
+,
+{"class":"org.opencompare.model.Feature@45026941473862273403","name":"Zm9ybWF0KGZvcm1hdHN0cmluZywgaXRlbXMpIHJldHVybnMgc3RyaW5n","generated_KMF_ID":"45026941473862273403","parentGroup":[],"cells":["products[19740637381473862273403]/cells[2074347471473862273403]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "19740637381473862273403",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "7719125921473862273403",
+    "position" : 0
+  }, {
+    "feature" : "45026941473862273403",
+    "position" : 1
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

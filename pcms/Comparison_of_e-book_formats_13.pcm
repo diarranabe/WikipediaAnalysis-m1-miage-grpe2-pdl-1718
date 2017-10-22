@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@19081982111473862267858","name":"Q29tcGFyaXNvbl9vZl9lLWJvb2tfZm9ybWF0cyAtIElFQyA2MjQ0OA==","generated_KMF_ID":"19081982111473862267858","productsKey":["features[9091078651473862267858]"],"products":[
+{"class":"org.opencompare.model.Product@7857121501473862267858","generated_KMF_ID":"7857121501473862267858","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@9670585241473862267858","content":"UHVibGlzaGVkIGFzOg==","rawContent":"c3R5bGU9ImJhY2tncm91bmQ6I2RkZDsifCAnJ1B1Ymxpc2hlZCBhcycnOg==","generated_KMF_ID":"9670585241473862267858","feature":["features[9091078651473862267858]"],"product":["products[7857121501473862267858]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@10712115071473862267858","value":"UHVibGlzaGVkIGFzOg==","generated_KMF_ID":"10712115071473862267858"}
+]}
+,
+{"class":"org.opencompare.model.Cell@18846973071473862267858","content":"","rawContent":"","generated_KMF_ID":"18846973071473862267858","feature":["features[11176369481473862267858]"],"product":["products[7857121501473862267858]"],"interpretation":[
+{"class":"org.opencompare.model.NotAvailable@8669065921473862267858","generated_KMF_ID":"8669065921473862267858"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@11176369481473862267858","name":"SUVDIDYyNDQ4","generated_KMF_ID":"11176369481473862267858","parentGroup":[],"cells":["products[7857121501473862267858]/cells[18846973071473862267858]"]}
+,
+{"class":"org.opencompare.model.Feature@9091078651473862267858","name":"Rm9ybWF0Og==","generated_KMF_ID":"9091078651473862267858","parentGroup":[],"cells":["products[7857121501473862267858]/cells[9670585241473862267858]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "7857121501473862267858",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "11176369481473862267858",
+    "position" : 1
+  }, {
+    "feature" : "9091078651473862267858",
+    "position" : 0
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@7835138741473862267859","name":"Q29tcGFyaXNvbl9vZl9lLWJvb2tfZm9ybWF0cyAtIFJURg==","generated_KMF_ID":"7835138741473862267859","productsKey":["features[15694553041473862267859]"],"products":[
+{"class":"org.opencompare.model.Product@2370359241473862267859","generated_KMF_ID":"2370359241473862267859","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@9647976181473862267859","content":"LnJ0Zg==","rawContent":"LltbUmljaCBUZXh0IEZvcm1hdHxydGZdXQ==","generated_KMF_ID":"9647976181473862267859","feature":["features[17336795561473862267859]"],"product":["products[2370359241473862267859]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@7524005301473862267859","value":"LnJ0Zg==","generated_KMF_ID":"7524005301473862267859"}
+]}
+,
+{"class":"org.opencompare.model.Cell@9970940591473862267859","content":"UHVibGlzaGVkIGFzOg==","rawContent":"c3R5bGU9ImJhY2tncm91bmQ6I2RkZDsifCAnJ1B1Ymxpc2hlZCBhcycnOg==","generated_KMF_ID":"9970940591473862267859","feature":["features[15694553041473862267859]"],"product":["products[2370359241473862267859]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@5612100871473862267859","value":"UHVibGlzaGVkIGFzOg==","generated_KMF_ID":"5612100871473862267859"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@15694553041473862267859","name":"Rm9ybWF0Og==","generated_KMF_ID":"15694553041473862267859","parentGroup":[],"cells":["products[2370359241473862267859]/cells[9970940591473862267859]"]}
+,
+{"class":"org.opencompare.model.Feature@17336795561473862267859","name":"UmljaCBUZXh0IEZvcm1hdA==","generated_KMF_ID":"17336795561473862267859","parentGroup":[],"cells":["products[2370359241473862267859]/cells[9647976181473862267859]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "2370359241473862267859",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "15694553041473862267859",
+    "position" : 0
+  }, {
+    "feature" : "17336795561473862267859",
+    "position" : 1
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

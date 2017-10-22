@@ -1,0 +1,155 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@10804296851473862266655","name":"Q29tcGFyaXNvbl9vZl9Vbml0ZWRfU3RhdGVzX3ByZXNpZGVudGlhbF9jYW5kaWRhdGVzLF8yMDA4IC0gQXJtZW5pYW4gZ2Vub2NpZGU=","generated_KMF_ID":"10804296851473862266655","productsKey":["features[2471318261473862266655]"],"products":[
+{"class":"org.opencompare.model.Product@14150826271473862266655","generated_KMF_ID":"14150826271473862266655","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@18447003531473862266655","content":"QmFyYWNrIE9iYW1h","rawContent":"Y29sc3Bhbj0iMiIgfEJhcmFjayBPYmFtYQ==","generated_KMF_ID":"18447003531473862266655","feature":["features[4858981721473862266655]"],"product":["products[14150826271473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@7332575541473862266654","value":"QmFyYWNrIE9iYW1h","generated_KMF_ID":"7332575541473862266654"}
+]}
+,
+{"class":"org.opencompare.model.Cell@2878477251473862266655","content":"Q3ludGhpYSBNY0tpbm5leQ==","rawContent":"Q3ludGhpYSBNY0tpbm5leQ==","generated_KMF_ID":"2878477251473862266655","feature":["features[2471318261473862266655]"],"product":["products[14150826271473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@4026764221473862266655","value":"Q3ludGhpYSBNY0tpbm5leQ==","generated_KMF_ID":"4026764221473862266655"}
+]}
+,
+{"class":"org.opencompare.model.Cell@1082331851473862266655","content":"","rawContent":"","generated_KMF_ID":"1082331851473862266655","feature":["features[21275194121473862266655]"],"product":["products[14150826271473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.NotAvailable@18702369601473862266655","generated_KMF_ID":"18702369601473862266655"}
+]}
+,
+{"class":"org.opencompare.model.Cell@6489554711473862266655","content":"T24gSmFudWFyeSAxOSwgMjAwOCBPYmFtYSBhbm5vdW5jZWQgdGhhdCBhcyBhIFUuUy4gU2VuYXRvciwgaGUgaGFzIHN0b29kIHdpdGggdGhlIEFybWVuaWFuIEFtZXJpY2FuIGNvbW11bml0eSBpbiBjYWxsaW5nIGZvciBUdXJrZXkncyBhY2tub3dsZWRnZW1lbnQgb2YgdGhlIEFybWVuaWFuIEdlbm9jaWRlLCBhbmQgc3VwcG9ydHMgaXRzIHJlY29nbml0aW9uLiBJbiAyMDA2LCBPYmFtYSBjcml0aWNpemVkIFNlY3JldGFyeSBvZiBTdGF0ZSBDb25kb2xlZXp6YSBSaWNlIGZvciBmaXJpbmcgVW5pdGVkIFN0YXRlcyBBbWJhc3NhZG9yIHRvIEFybWVuaWEsIEpvaG4gRXZhbnMsIGFmdGVyIGhlIHVzZWQgdGhlIHRlcm0gImdlbm9jaWRlIiB0byBkZXNjcmliZSBUdXJrZXkncyBraWxsaW5nIG9mIGh1bmRyZWRzIG9mIHRob3VzYW5kcyBvZiBBcm1lbmlhbnMuIE9uIEp1bmUsIDIwMDggT2JhbWEgcmVzdGF0ZWQgaGlzIGNvbW1pdG1lbnQgdG8gVS5TLiByZWNvZ25pdGlvbiBvZiB0aGUgQXJtZW5pYW4gR2Vub2NpZGUgaW4gYSBsZXR0ZXIgdG8gQU5DQSBDaGFpcm1hbiBLZW4gSGFjaGlraWFuLiAgT2JhbWEgc3VwcG9ydGVkIEhvdXNlIFJlc29sdXRpb24gMTA2IHdoaWNoIHJlY29nbml6ZWQgdGhlIGtpbGxpbmdzIGFzIGdlbm9jaWRlLg==","rawContent":"Y29sc3Bhbj0iMiIgd2lkdGg9IjUwJSIgfE9uIEphbnVhcnkgMTksIDIwMDggT2JhbWEgYW5ub3VuY2VkIHRoYXQgYXMgYSBVLlMuIFNlbmF0b3IsIGhlIGhhcyBzdG9vZCB3aXRoIHRoZSBbW0FybWVuaWFuIEFtZXJpY2FuXV0gY29tbXVuaXR5IGluIGNhbGxpbmcgZm9yIFR1cmtleSdzIGFja25vd2xlZGdlbWVudCBvZiB0aGUgW1tBcm1lbmlhbiBHZW5vY2lkZV1dLCBhbmQgc3VwcG9ydHMgaXRzIFtbUmVjb2duaXRpb24gb2YgdGhlIEFybWVuaWFuIEdlbm9jaWRlfHJlY29nbml0aW9uXV0uIEluIDIwMDYsIE9iYW1hIGNyaXRpY2l6ZWQgU2VjcmV0YXJ5IG9mIFN0YXRlIFtbQ29uZG9sZWV6emEgUmljZV1dIGZvciBmaXJpbmcgW1tVbml0ZWQgU3RhdGVzIEFtYmFzc2Fkb3IgdG8gQXJtZW5pYV1dLCBbW0pvaG4gTWFyc2hhbGwgRXZhbnN8Sm9obiBFdmFuc11dLCBhZnRlciBoZSB1c2VkIHRoZSB0ZXJtICJnZW5vY2lkZSIgdG8gZGVzY3JpYmUgVHVya2V5J3Mga2lsbGluZyBvZiBodW5kcmVkcyBvZiB0aG91c2FuZHMgb2YgW1tBcm1lbmlhbiBwZW9wbGV8QXJtZW5pYW5zXV0uIE9uIEp1bmUsIDIwMDggT2JhbWEgcmVzdGF0ZWQgaGlzIGNvbW1pdG1lbnQgdG8gVS5TLiByZWNvZ25pdGlvbiBvZiB0aGUgQXJtZW5pYW4gR2Vub2NpZGUgaW4gYSBsZXR0ZXIgdG8gW1tBcm1lbmlhbiBOYXRpb25hbCBDb21taXR0ZWUgb2YgQW1lcmljYXxBTkNBXV0gQ2hhaXJtYW4gW1tLZW4gSGFjaGlraWFuXV0uICBPYmFtYSBzdXBwb3J0ZWQgW1tVbml0ZWQgU3RhdGVzIHJlc29sdXRpb24gb24gQXJtZW5pYW4gZ2Vub2NpZGV8SG91c2UgUmVzb2x1dGlvbiAxMDZdXSB3aGljaCByZWNvZ25pemVkIHRoZSBraWxsaW5ncyBhcyBnZW5vY2lkZS4=","generated_KMF_ID":"6489554711473862266655","feature":["features[10699186071473862266655]"],"product":["products[14150826271473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.Multiple@13867378811473862266654","generated_KMF_ID":"13867378811473862266654","subvalues":[
+{"class":"org.opencompare.model.StringValue@19510685351473862266654","value":"IGFuZCBzdXBwb3J0cyBpdHMgcmVjb2duaXRpb24uIEluIDIwMDY=","generated_KMF_ID":"19510685351473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@4198880541473862266654","value":"IGhlIGhhcyBzdG9vZCB3aXRoIHRoZSBBcm1lbmlhbiBBbWVyaWNhbiBjb21tdW5pdHkgaW4gY2FsbGluZyBmb3IgVHVya2V5J3MgYWNrbm93bGVkZ2VtZW50IG9mIHRoZSBBcm1lbmlhbiBHZW5vY2lkZQ==","generated_KMF_ID":"4198880541473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@20351455361473862266654","value":"IEpvaG4gRXZhbnM=","generated_KMF_ID":"20351455361473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@14633053641473862266654","value":"IGFmdGVyIGhlIHVzZWQgdGhlIHRlcm0gImdlbm9jaWRlIiB0byBkZXNjcmliZSBUdXJrZXkncyBraWxsaW5nIG9mIGh1bmRyZWRzIG9mIHRob3VzYW5kcyBvZiBBcm1lbmlhbnMuIE9uIEp1bmU=","generated_KMF_ID":"14633053641473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@17430303951473862266654","value":"T24gSmFudWFyeSAxOQ==","generated_KMF_ID":"17430303951473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@9341565011473862266654","value":"IE9iYW1hIGNyaXRpY2l6ZWQgU2VjcmV0YXJ5IG9mIFN0YXRlIENvbmRvbGVlenphIFJpY2UgZm9yIGZpcmluZyBVbml0ZWQgU3RhdGVzIEFtYmFzc2Fkb3IgdG8gQXJtZW5pYQ==","generated_KMF_ID":"9341565011473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@1327248881473862266654","value":"IDIwMDggT2JhbWEgYW5ub3VuY2VkIHRoYXQgYXMgYSBVLlMuIFNlbmF0b3I=","generated_KMF_ID":"1327248881473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@19521101571473862266654","value":"IDIwMDggT2JhbWEgcmVzdGF0ZWQgaGlzIGNvbW1pdG1lbnQgdG8gVS5TLiByZWNvZ25pdGlvbiBvZiB0aGUgQXJtZW5pYW4gR2Vub2NpZGUgaW4gYSBsZXR0ZXIgdG8gQU5DQSBDaGFpcm1hbiBLZW4gSGFjaGlraWFuLiAgT2JhbWEgc3VwcG9ydGVkIEhvdXNlIFJlc29sdXRpb24gMTA2IHdoaWNoIHJlY29nbml6ZWQgdGhlIGtpbGxpbmdzIGFzIGdlbm9jaWRlLg==","generated_KMF_ID":"19521101571473862266654"}
+]}
+]}
+]}
+,
+{"class":"org.opencompare.model.Product@19517091861473862266655","generated_KMF_ID":"19517091861473862266655","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@18925354501473862266655","content":"T24gSmFudWFyeSAxOSwgMjAwOCBPYmFtYSBhbm5vdW5jZWQgdGhhdCBhcyBhIFUuUy4gU2VuYXRvciwgaGUgaGFzIHN0b29kIHdpdGggdGhlIEFybWVuaWFuIEFtZXJpY2FuIGNvbW11bml0eSBpbiBjYWxsaW5nIGZvciBUdXJrZXkncyBhY2tub3dsZWRnZW1lbnQgb2YgdGhlIEFybWVuaWFuIEdlbm9jaWRlLCBhbmQgc3VwcG9ydHMgaXRzIHJlY29nbml0aW9uLiBJbiAyMDA2LCBPYmFtYSBjcml0aWNpemVkIFNlY3JldGFyeSBvZiBTdGF0ZSBDb25kb2xlZXp6YSBSaWNlIGZvciBmaXJpbmcgVW5pdGVkIFN0YXRlcyBBbWJhc3NhZG9yIHRvIEFybWVuaWEsIEpvaG4gRXZhbnMsIGFmdGVyIGhlIHVzZWQgdGhlIHRlcm0gImdlbm9jaWRlIiB0byBkZXNjcmliZSBUdXJrZXkncyBraWxsaW5nIG9mIGh1bmRyZWRzIG9mIHRob3VzYW5kcyBvZiBBcm1lbmlhbnMuIE9uIEp1bmUsIDIwMDggT2JhbWEgcmVzdGF0ZWQgaGlzIGNvbW1pdG1lbnQgdG8gVS5TLiByZWNvZ25pdGlvbiBvZiB0aGUgQXJtZW5pYW4gR2Vub2NpZGUgaW4gYSBsZXR0ZXIgdG8gQU5DQSBDaGFpcm1hbiBLZW4gSGFjaGlraWFuLiAgT2JhbWEgc3VwcG9ydGVkIEhvdXNlIFJlc29sdXRpb24gMTA2IHdoaWNoIHJlY29nbml6ZWQgdGhlIGtpbGxpbmdzIGFzIGdlbm9jaWRlLg==","rawContent":"Y29sc3Bhbj0iMiIgd2lkdGg9IjUwJSIgfE9uIEphbnVhcnkgMTksIDIwMDggT2JhbWEgYW5ub3VuY2VkIHRoYXQgYXMgYSBVLlMuIFNlbmF0b3IsIGhlIGhhcyBzdG9vZCB3aXRoIHRoZSBbW0FybWVuaWFuIEFtZXJpY2FuXV0gY29tbXVuaXR5IGluIGNhbGxpbmcgZm9yIFR1cmtleSdzIGFja25vd2xlZGdlbWVudCBvZiB0aGUgW1tBcm1lbmlhbiBHZW5vY2lkZV1dLCBhbmQgc3VwcG9ydHMgaXRzIFtbUmVjb2duaXRpb24gb2YgdGhlIEFybWVuaWFuIEdlbm9jaWRlfHJlY29nbml0aW9uXV0uIEluIDIwMDYsIE9iYW1hIGNyaXRpY2l6ZWQgU2VjcmV0YXJ5IG9mIFN0YXRlIFtbQ29uZG9sZWV6emEgUmljZV1dIGZvciBmaXJpbmcgW1tVbml0ZWQgU3RhdGVzIEFtYmFzc2Fkb3IgdG8gQXJtZW5pYV1dLCBbW0pvaG4gTWFyc2hhbGwgRXZhbnN8Sm9obiBFdmFuc11dLCBhZnRlciBoZSB1c2VkIHRoZSB0ZXJtICJnZW5vY2lkZSIgdG8gZGVzY3JpYmUgVHVya2V5J3Mga2lsbGluZyBvZiBodW5kcmVkcyBvZiB0aG91c2FuZHMgb2YgW1tBcm1lbmlhbiBwZW9wbGV8QXJtZW5pYW5zXV0uIE9uIEp1bmUsIDIwMDggT2JhbWEgcmVzdGF0ZWQgaGlzIGNvbW1pdG1lbnQgdG8gVS5TLiByZWNvZ25pdGlvbiBvZiB0aGUgQXJtZW5pYW4gR2Vub2NpZGUgaW4gYSBsZXR0ZXIgdG8gW1tBcm1lbmlhbiBOYXRpb25hbCBDb21taXR0ZWUgb2YgQW1lcmljYXxBTkNBXV0gQ2hhaXJtYW4gW1tLZW4gSGFjaGlraWFuXV0uICBPYmFtYSBzdXBwb3J0ZWQgW1tVbml0ZWQgU3RhdGVzIHJlc29sdXRpb24gb24gQXJtZW5pYW4gZ2Vub2NpZGV8SG91c2UgUmVzb2x1dGlvbiAxMDZdXSB3aGljaCByZWNvZ25pemVkIHRoZSBraWxsaW5ncyBhcyBnZW5vY2lkZS4=","generated_KMF_ID":"18925354501473862266655","feature":["features[10699186071473862266655]"],"product":["products[19517091861473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.Multiple@8716944991473862266654","generated_KMF_ID":"8716944991473862266654","subvalues":[
+{"class":"org.opencompare.model.StringValue@3701977171473862266655","value":"IDIwMDggT2JhbWEgcmVzdGF0ZWQgaGlzIGNvbW1pdG1lbnQgdG8gVS5TLiByZWNvZ25pdGlvbiBvZiB0aGUgQXJtZW5pYW4gR2Vub2NpZGUgaW4gYSBsZXR0ZXIgdG8gQU5DQSBDaGFpcm1hbiBLZW4gSGFjaGlraWFuLiAgT2JhbWEgc3VwcG9ydGVkIEhvdXNlIFJlc29sdXRpb24gMTA2IHdoaWNoIHJlY29nbml6ZWQgdGhlIGtpbGxpbmdzIGFzIGdlbm9jaWRlLg==","generated_KMF_ID":"3701977171473862266655"}
+,
+{"class":"org.opencompare.model.StringValue@6116705981473862266654","value":"T24gSmFudWFyeSAxOQ==","generated_KMF_ID":"6116705981473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@3223691241473862266654","value":"IGhlIGhhcyBzdG9vZCB3aXRoIHRoZSBBcm1lbmlhbiBBbWVyaWNhbiBjb21tdW5pdHkgaW4gY2FsbGluZyBmb3IgVHVya2V5J3MgYWNrbm93bGVkZ2VtZW50IG9mIHRoZSBBcm1lbmlhbiBHZW5vY2lkZQ==","generated_KMF_ID":"3223691241473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@1487085371473862266654","value":"IGFuZCBzdXBwb3J0cyBpdHMgcmVjb2duaXRpb24uIEluIDIwMDY=","generated_KMF_ID":"1487085371473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@13910301581473862266655","value":"IEpvaG4gRXZhbnM=","generated_KMF_ID":"13910301581473862266655"}
+,
+{"class":"org.opencompare.model.StringValue@1083188621473862266655","value":"IE9iYW1hIGNyaXRpY2l6ZWQgU2VjcmV0YXJ5IG9mIFN0YXRlIENvbmRvbGVlenphIFJpY2UgZm9yIGZpcmluZyBVbml0ZWQgU3RhdGVzIEFtYmFzc2Fkb3IgdG8gQXJtZW5pYQ==","generated_KMF_ID":"1083188621473862266655"}
+,
+{"class":"org.opencompare.model.StringValue@19928326091473862266655","value":"IGFmdGVyIGhlIHVzZWQgdGhlIHRlcm0gImdlbm9jaWRlIiB0byBkZXNjcmliZSBUdXJrZXkncyBraWxsaW5nIG9mIGh1bmRyZWRzIG9mIHRob3VzYW5kcyBvZiBBcm1lbmlhbnMuIE9uIEp1bmU=","generated_KMF_ID":"19928326091473862266655"}
+,
+{"class":"org.opencompare.model.StringValue@8302568241473862266654","value":"IDIwMDggT2JhbWEgYW5ub3VuY2VkIHRoYXQgYXMgYSBVLlMuIFNlbmF0b3I=","generated_KMF_ID":"8302568241473862266654"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Cell@5470958011473862266655","content":"QmFyYWNrIE9iYW1h","rawContent":"Y29sc3Bhbj0iMiIgfEJhcmFjayBPYmFtYQ==","generated_KMF_ID":"5470958011473862266655","feature":["features[4858981721473862266655]"],"product":["products[19517091861473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@8095449381473862266654","value":"QmFyYWNrIE9iYW1h","generated_KMF_ID":"8095449381473862266654"}
+]}
+,
+{"class":"org.opencompare.model.Cell@17812172591473862266655","content":"UmFscGggTmFkZXI=","rawContent":"UmFscGggTmFkZXI=","generated_KMF_ID":"17812172591473862266655","feature":["features[2471318261473862266655]"],"product":["products[19517091861473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@1450975991473862266655","value":"UmFscGggTmFkZXI=","generated_KMF_ID":"1450975991473862266655"}
+]}
+,
+{"class":"org.opencompare.model.Cell@10054589481473862266655","content":"","rawContent":"","generated_KMF_ID":"10054589481473862266655","feature":["features[21275194121473862266655]"],"product":["products[19517091861473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.NotAvailable@14677991151473862266655","generated_KMF_ID":"14677991151473862266655"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Product@13952524861473862266655","generated_KMF_ID":"13952524861473862266655","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@4799164251473862266655","content":"Qm9iIEJhcnI=","rawContent":"Qm9iIEJhcnI=","generated_KMF_ID":"4799164251473862266655","feature":["features[2471318261473862266655]"],"product":["products[13952524861473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@8019011521473862266655","value":"Qm9iIEJhcnI=","generated_KMF_ID":"8019011521473862266655"}
+]}
+,
+{"class":"org.opencompare.model.Cell@4050265031473862266655","content":"QXQgYSB0b3duIGhhbGwgbWVldGluZyBKYW51YXJ5IDYsIDIwMDggTWNDYWluIHdhcyByZXBvcnRlZCB0byBoYXZlIGFuc3dlcmVkIGEgcXVlc3Rpb24gb24gdGhlIEFybWVuaWFuIEdlbm9jaWRlIGJ5IG5vdGluZyB0aGF0IGhlIHJlY29nbml6ZXMgdGhlIEFybWVuaWFuIEdlbm9jaWRlLCBidXQgb3Bwb3NlcyB0aGUgQXJtZW5pYW4gR2Vub2NpZGUgUmVzb2x1dGlvbiBkdWUgdG8gdGhlIFR1cmtpc2ggZ292ZXJubWVudCdzIHNlbnNpdGl2aXRpZXMgYW5kIHRoZSBpbXBvcnRhbmNlIG9mIHRoZWlyIGNvbnRpbnVlZCBjb250cmlidXRpb24gdG8gdGhlIHdhciBvbiB0ZXJyb3IuIE9uIFNlcHRlbWJlciAyOSwgMjAwOCwgaW4gYW4gb3BlbiBsZXR0ZXIgdG8gdGhlIEFybWVuaWFuLUFtZXJpY2FuIENvbW11bml0eSBvZiB0aGUgVW5pdGVkIFN0YXRlcyBoZSBzdGF0ZWQsIHRoYXQgIml0IGlzIGZhaXIgdG8gc2F5IHRoYXQgb25lIG9mIHRoZSBncmVhdGVzdCB0cmFnZWRpZXMgb2YgdGhlIDIwdGggY2VudHVyeSwgdGhlIGJydXRhbCBtdXJkZXIgb2YgYXMgbWFueSBhcyBvbmUgYW5kIGEgaGFsZiBtaWxsaW9uIEFybWVuaWFucyB1bmRlciB0aGUgcnVsZSBvZiB0aGUgT3R0b21hbiBFbXBpcmUsIGhhcyBhbHNvIGJlZW4gb25lIG9mIHRoZSBtb3N0IG5lZ2xlY3RlZCIgYW5kIHRoYXQgIml0IGlzIG91ciByZXNwb25zaWJpbGl0eSB0byByZWNvZ25pemUgdGhvc2UgdHJhZ2ljIGV2ZW50cyIu","rawContent":"Y29sc3Bhbj0iMiIgd2lkdGg9IjUwJSIgfEF0IGEgdG93biBoYWxsIG1lZXRpbmcgSmFudWFyeSA2LCAyMDA4IE1jQ2FpbiB3YXMgcmVwb3J0ZWQgdG8gaGF2ZSBhbnN3ZXJlZCBhIHF1ZXN0aW9uIG9uIHRoZSBBcm1lbmlhbiBHZW5vY2lkZSBieSBub3RpbmcgdGhhdCBoZSByZWNvZ25pemVzIHRoZSBBcm1lbmlhbiBHZW5vY2lkZSwgYnV0IG9wcG9zZXMgdGhlIEFybWVuaWFuIEdlbm9jaWRlIFJlc29sdXRpb24gZHVlIHRvIHRoZSBUdXJraXNoIGdvdmVybm1lbnQncyBzZW5zaXRpdml0aWVzIGFuZCB0aGUgaW1wb3J0YW5jZSBvZiB0aGVpciBjb250aW51ZWQgY29udHJpYnV0aW9uIHRvIHRoZSB3YXIgb24gdGVycm9yLiBPbiBTZXB0ZW1iZXIgMjksIDIwMDgsIGluIGFuIG9wZW4gbGV0dGVyIHRvIHRoZSBBcm1lbmlhbi1BbWVyaWNhbiBDb21tdW5pdHkgb2YgdGhlIFVuaXRlZCBTdGF0ZXMgaGUgc3RhdGVkLCB0aGF0ICJpdCBpcyBmYWlyIHRvIHNheSB0aGF0IG9uZSBvZiB0aGUgZ3JlYXRlc3QgdHJhZ2VkaWVzIG9mIHRoZSAyMHRoIGNlbnR1cnksIHRoZSBicnV0YWwgbXVyZGVyIG9mIGFzIG1hbnkgYXMgb25lIGFuZCBhIGhhbGYgbWlsbGlvbiBBcm1lbmlhbnMgdW5kZXIgdGhlIHJ1bGUgb2YgdGhlIE90dG9tYW4gRW1waXJlLCBoYXMgYWxzbyBiZWVuIG9uZSBvZiB0aGUgbW9zdCBuZWdsZWN0ZWQiIGFuZCB0aGF0ICJpdCBpcyBvdXIgcmVzcG9uc2liaWxpdHkgdG8gcmVjb2duaXplIHRob3NlIHRyYWdpYyBldmVudHMiLg==","generated_KMF_ID":"4050265031473862266655","feature":["features[10699186071473862266655]"],"product":["products[13952524861473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.Multiple@15721242051473862266654","generated_KMF_ID":"15721242051473862266654","subvalues":[
+{"class":"org.opencompare.model.Multiple@3409306521473862266654","generated_KMF_ID":"3409306521473862266654","subvalues":[
+{"class":"org.opencompare.model.StringValue@20388106051473862266654","value":"dGhlIGltcG9ydGFuY2Ugb2YgdGhlaXIgY29udGludWVkIGNvbnRyaWJ1dGlvbiB0byB0aGUgd2FyIG9uIHRlcnJvci4gT24gU2VwdGVtYmVyIDI5","generated_KMF_ID":"20388106051473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@18150833011473862266654","value":"IGJ1dCBvcHBvc2VzIHRoZSBBcm1lbmlhbiBHZW5vY2lkZSBSZXNvbHV0aW9uIGR1ZSB0byB0aGUgVHVya2lzaCBnb3Zlcm5tZW50J3Mgc2Vuc2l0aXZpdGllcw==","generated_KMF_ID":"18150833011473862266654"}
+]}
+,
+{"class":"org.opencompare.model.StringValue@2588233381473862266654","value":"IGluIGFuIG9wZW4gbGV0dGVyIHRvIHRoZSBBcm1lbmlhbi1BbWVyaWNhbiBDb21tdW5pdHkgb2YgdGhlIFVuaXRlZCBTdGF0ZXMgaGUgc3RhdGVk","generated_KMF_ID":"2588233381473862266654"}
+,
+{"class":"org.opencompare.model.Multiple@9700364661473862266654","generated_KMF_ID":"9700364661473862266654","subvalues":[
+{"class":"org.opencompare.model.StringValue@15083195661473862266654","value":"IGhhcyBhbHNvIGJlZW4gb25lIG9mIHRoZSBtb3N0IG5lZ2xlY3RlZCI=","generated_KMF_ID":"15083195661473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@7323430251473862266654","value":"dGhhdCAiaXQgaXMgb3VyIHJlc3BvbnNpYmlsaXR5IHRvIHJlY29nbml6ZSB0aG9zZSB0cmFnaWMgZXZlbnRzIi4=","generated_KMF_ID":"7323430251473862266654"}
+]}
+,
+{"class":"org.opencompare.model.Multiple@12659846261473862266654","generated_KMF_ID":"12659846261473862266654","subvalues":[
+{"class":"org.opencompare.model.StringValue@17199266511473862266654","value":"YSBoYWxmIG1pbGxpb24gQXJtZW5pYW5zIHVuZGVyIHRoZSBydWxlIG9mIHRoZSBPdHRvbWFuIEVtcGlyZQ==","generated_KMF_ID":"17199266511473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@617440321473862266654","value":"IHRoZSBicnV0YWwgbXVyZGVyIG9mIGFzIG1hbnkgYXMgb25l","generated_KMF_ID":"617440321473862266654"}
+]}
+,
+{"class":"org.opencompare.model.StringValue@15619248171473862266654","value":"QXQgYSB0b3duIGhhbGwgbWVldGluZyBKYW51YXJ5IDY=","generated_KMF_ID":"15619248171473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@15113368311473862266654","value":"IDIwMDggTWNDYWluIHdhcyByZXBvcnRlZCB0byBoYXZlIGFuc3dlcmVkIGEgcXVlc3Rpb24gb24gdGhlIEFybWVuaWFuIEdlbm9jaWRlIGJ5IG5vdGluZyB0aGF0IGhlIHJlY29nbml6ZXMgdGhlIEFybWVuaWFuIEdlbm9jaWRl","generated_KMF_ID":"15113368311473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@4713642751473862266654","value":"IHRoYXQgIml0IGlzIGZhaXIgdG8gc2F5IHRoYXQgb25lIG9mIHRoZSBncmVhdGVzdCB0cmFnZWRpZXMgb2YgdGhlIDIwdGggY2VudHVyeQ==","generated_KMF_ID":"4713642751473862266654"}
+,
+{"class":"org.opencompare.model.StringValue@1798485611473862266654","value":"IDIwMDg=","generated_KMF_ID":"1798485611473862266654"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Cell@214177131473862266655","content":"","rawContent":"","generated_KMF_ID":"214177131473862266655","feature":["features[21275194121473862266655]"],"product":["products[13952524861473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.NotAvailable@19748083781473862266655","generated_KMF_ID":"19748083781473862266655"}
+]}
+,
+{"class":"org.opencompare.model.Cell@11022211171473862266655","content":"Sm9obiBNY0NhaW4=","rawContent":"Y29sc3Bhbj0iMiIgfEpvaG4gTWNDYWlu","generated_KMF_ID":"11022211171473862266655","feature":["features[4858981721473862266655]"],"product":["products[13952524861473862266655]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@2942344051473862266654","value":"Sm9obiBNY0NhaW4=","generated_KMF_ID":"2942344051473862266654"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@2471318261473862266655","name":"Q2h1Y2sgQmFsZHdpbg==","generated_KMF_ID":"2471318261473862266655","parentGroup":[],"cells":["products[13952524861473862266655]/cells[4799164251473862266655]","products[14150826271473862266655]/cells[2878477251473862266655]","products[19517091861473862266655]/cells[17812172591473862266655]"]}
+,
+{"class":"org.opencompare.model.Feature@10699186071473862266655","name":"QXQgYSB0b3duIGhhbGwgbWVldGluZyBKYW51YXJ5IDYsIDIwMDggTWNDYWluIHdhcyByZXBvcnRlZCB0byBoYXZlIGFuc3dlcmVkIGEgcXVlc3Rpb24gb24gdGhlIEFybWVuaWFuIEdlbm9jaWRlIGJ5IG5vdGluZyB0aGF0IGhlIHJlY29nbml6ZXMgdGhlIEFybWVuaWFuIEdlbm9jaWRlLCBidXQgb3Bwb3NlcyB0aGUgQXJtZW5pYW4gR2Vub2NpZGUgUmVzb2x1dGlvbiBkdWUgdG8gdGhlIFR1cmtpc2ggZ292ZXJubWVudCdzIHNlbnNpdGl2aXRpZXMgYW5kIHRoZSBpbXBvcnRhbmNlIG9mIHRoZWlyIGNvbnRpbnVlZCBjb250cmlidXRpb24gdG8gdGhlIHdhciBvbiB0ZXJyb3IuIE9uIFNlcHRlbWJlciAyOSwgMjAwOCwgaW4gYW4gb3BlbiBsZXR0ZXIgdG8gdGhlIEFybWVuaWFuLUFtZXJpY2FuIENvbW11bml0eSBvZiB0aGUgVW5pdGVkIFN0YXRlcyBoZSBzdGF0ZWQsIHRoYXQgIml0IGlzIGZhaXIgdG8gc2F5IHRoYXQgb25lIG9mIHRoZSBncmVhdGVzdCB0cmFnZWRpZXMgb2YgdGhlIDIwdGggY2VudHVyeSwgdGhlIGJydXRhbCBtdXJkZXIgb2YgYXMgbWFueSBhcyBvbmUgYW5kIGEgaGFsZiBtaWxsaW9uIEFybWVuaWFucyB1bmRlciB0aGUgcnVsZSBvZiB0aGUgT3R0b21hbiBFbXBpcmUsIGhhcyBhbHNvIGJlZW4gb25lIG9mIHRoZSBtb3N0IG5lZ2xlY3RlZCIgYW5kIHRoYXQgIml0IGlzIG91ciByZXNwb25zaWJpbGl0eSB0byByZWNvZ25pemUgdGhvc2UgdHJhZ2ljIGV2ZW50cyIu","generated_KMF_ID":"10699186071473862266655","parentGroup":[],"cells":["products[19517091861473862266655]/cells[18925354501473862266655]","products[13952524861473862266655]/cells[4050265031473862266655]","products[14150826271473862266655]/cells[6489554711473862266655]"]}
+,
+{"class":"org.opencompare.model.Feature@21275194121473862266655","name":"wqA=","generated_KMF_ID":"21275194121473862266655","parentGroup":[],"cells":["products[19517091861473862266655]/cells[10054589481473862266655]","products[14150826271473862266655]/cells[1082331851473862266655]","products[13952524861473862266655]/cells[214177131473862266655]"]}
+,
+{"class":"org.opencompare.model.Feature@4858981721473862266655","name":"Sm9obiBNY0NhaW4=","generated_KMF_ID":"4858981721473862266655","parentGroup":[],"cells":["products[14150826271473862266655]/cells[18447003531473862266655]","products[19517091861473862266655]/cells[5470958011473862266655]","products[13952524861473862266655]/cells[11022211171473862266655]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "14150826271473862266655",
+    "position" : 2
+  }, {
+    "product" : "19517091861473862266655",
+    "position" : 3
+  }, {
+    "product" : "13952524861473862266655",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "2471318261473862266655",
+    "position" : 2
+  }, {
+    "feature" : "10699186071473862266655",
+    "position" : 1
+  }, {
+    "feature" : "21275194121473862266655",
+    "position" : 3
+  }, {
+    "feature" : "4858981721473862266655",
+    "position" : 0
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

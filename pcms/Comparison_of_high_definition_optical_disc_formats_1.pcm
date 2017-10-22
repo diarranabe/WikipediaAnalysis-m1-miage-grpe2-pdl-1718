@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@11736482091473862282956","name":"Q29tcGFyaXNvbl9vZl9oaWdoX2RlZmluaXRpb25fb3B0aWNhbF9kaXNjX2Zvcm1hdHMgLSBDb3B5IHByb3RlY3Rpb24=","generated_KMF_ID":"11736482091473862282956","productsKey":["features[2805553131473862282956]"],"products":[
+{"class":"org.opencompare.model.Product@12205802741473862282956","generated_KMF_ID":"12205802741473862282956","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@20446363031473862282956","content":"KkhEQ1AgZW5jcnlwdGVkIGRpZ2l0YWwgb3V0cHV0","rawContent":"KltbSERDUF1dIGVuY3J5cHRlZCBkaWdpdGFsIG91dHB1dA==","generated_KMF_ID":"20446363031473862282956","feature":["features[18040410241473862282956]"],"product":["products[12205802741473862282956]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@11269593791473862282956","value":"KkhEQ1AgZW5jcnlwdGVkIGRpZ2l0YWwgb3V0cHV0","generated_KMF_ID":"11269593791473862282956"}
+]}
+,
+{"class":"org.opencompare.model.Cell@7848670721473862282956","content":"KkhEQ1AgZW5jcnlwdGVkIGRpZ2l0YWwgb3V0cHV0ClJPTS1NYXJrIHdhdGVybWFya2luZyB0ZWNobm9sb2d5IChwaHlzaWNhbCBsYXllcikKQkQgZHluYW1pYyBjcnlwdG8gKEJEKykKQ2luYXZpYSBEaWdpdGFsIE1hcms=","rawContent":"KltbSERDUF1dIGVuY3J5cHRlZCBkaWdpdGFsIG91dHB1dAoqUk9NLU1hcmsgd2F0ZXJtYXJraW5nIHRlY2hub2xvZ3kgKHBoeXNpY2FsIGxheWVyKQoqQkQgZHluYW1pYyBjcnlwdG8gKFtbQkQrXV0pCipDaW5hdmlhIERpZ2l0YWwgTWFyaw==","generated_KMF_ID":"7848670721473862282956","feature":["features[2805553131473862282956]"],"product":["products[12205802741473862282956]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@14149187081473862282956","value":"KkhEQ1AgZW5jcnlwdGVkIGRpZ2l0YWwgb3V0cHV0ClJPTS1NYXJrIHdhdGVybWFya2luZyB0ZWNobm9sb2d5IChwaHlzaWNhbCBsYXllcikKQkQgZHluYW1pYyBjcnlwdG8gKEJEKykKQ2luYXZpYSBEaWdpdGFsIE1hcms=","generated_KMF_ID":"14149187081473862282956"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@2805553131473862282956","name":"Qmx1LXJheSBEaXNj","generated_KMF_ID":"2805553131473862282956","parentGroup":[],"cells":["products[12205802741473862282956]/cells[7848670721473862282956]"]}
+,
+{"class":"org.opencompare.model.Feature@18040410241473862282956","name":"SEQgRFZE","generated_KMF_ID":"18040410241473862282956","parentGroup":[],"cells":["products[12205802741473862282956]/cells[20446363031473862282956]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "12205802741473862282956",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "2805553131473862282956",
+    "position" : 0
+  }, {
+    "feature" : "18040410241473862282956",
+    "position" : 1
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

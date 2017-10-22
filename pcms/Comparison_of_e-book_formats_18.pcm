@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@5877650931473862267859","name":"Q29tcGFyaXNvbl9vZl9lLWJvb2tfZm9ybWF0cyAtIE5ld3RvbiBlQm9vayA=","generated_KMF_ID":"5877650931473862267859","productsKey":["features[17186297281473862267859]"],"products":[
+{"class":"org.opencompare.model.Product@17224703961473862267859","generated_KMF_ID":"17224703961473862267859","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@17250517851473862267859","content":"LnBrZw==","rawContent":"LnBrZw==","generated_KMF_ID":"17250517851473862267859","feature":["features[11163032651473862267859]"],"product":["products[17224703961473862267859]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@14301407071473862267859","value":"LnBrZw==","generated_KMF_ID":"14301407071473862267859"}
+]}
+,
+{"class":"org.opencompare.model.Cell@240388971473862267859","content":"UHVibGlzaGVkIGFzOg==","rawContent":"c3R5bGU9ImJhY2tncm91bmQ6I2RkZDsifCAnJ1B1Ymxpc2hlZCBhcycnOg==","generated_KMF_ID":"240388971473862267859","feature":["features[17186297281473862267859]"],"product":["products[17224703961473862267859]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@1597591241473862267859","value":"UHVibGlzaGVkIGFzOg==","generated_KMF_ID":"1597591241473862267859"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@17186297281473862267859","name":"Rm9ybWF0Og==","generated_KMF_ID":"17186297281473862267859","parentGroup":[],"cells":["products[17224703961473862267859]/cells[240388971473862267859]"]}
+,
+{"class":"org.opencompare.model.Feature@11163032651473862267859","name":"TmV3dG9uIGVCb29r","generated_KMF_ID":"11163032651473862267859","parentGroup":[],"cells":["products[17224703961473862267859]/cells[17250517851473862267859]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "17224703961473862267859",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "17186297281473862267859",
+    "position" : 0
+  }, {
+    "feature" : "11163032651473862267859",
+    "position" : 1
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

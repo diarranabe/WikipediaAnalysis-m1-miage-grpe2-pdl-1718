@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@13962836661473862267858","name":"Q29tcGFyaXNvbl9vZl9lLWJvb2tfZm9ybWF0cyAtIEZpY3Rpb25Cb29rIChGYjIpIA==","generated_KMF_ID":"13962836661473862267858","productsKey":["features[1550685721473862267858]"],"products":[
+{"class":"org.opencompare.model.Product@18738373651473862267858","generated_KMF_ID":"18738373651473862267858","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@18936363121473862267858","content":"UHVibGlzaGVkIGFzOg==","rawContent":"c3R5bGU9ImJhY2tncm91bmQ6I2RkZDsifCAnJ1B1Ymxpc2hlZCBhcycnOg==","generated_KMF_ID":"18936363121473862267858","feature":["features[1550685721473862267858]"],"product":["products[18738373651473862267858]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@4217955541473862267858","value":"UHVibGlzaGVkIGFzOg==","generated_KMF_ID":"4217955541473862267858"}
+]}
+,
+{"class":"org.opencompare.model.Cell@1402564071473862267858","content":"LmZiMg==","rawContent":"LltbRmljdGlvbkJvb2t8ZmIyXV0=","generated_KMF_ID":"1402564071473862267858","feature":["features[8066653111473862267858]"],"product":["products[18738373651473862267858]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@3959061161473862267858","value":"LmZiMg==","generated_KMF_ID":"3959061161473862267858"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@1550685721473862267858","name":"Rm9ybWF0Og==","generated_KMF_ID":"1550685721473862267858","parentGroup":[],"cells":["products[18738373651473862267858]/cells[18936363121473862267858]"]}
+,
+{"class":"org.opencompare.model.Feature@8066653111473862267858","name":"RmljdGlvbkJvb2s=","generated_KMF_ID":"8066653111473862267858","parentGroup":[],"cells":["products[18738373651473862267858]/cells[1402564071473862267858]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "18738373651473862267858",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "1550685721473862267858",
+    "position" : 0
+  }, {
+    "feature" : "8066653111473862267858",
+    "position" : 1
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@14902315741473862267857","name":"Q29tcGFyaXNvbl9vZl9lLWJvb2tfZm9ybWF0cyAtIENvbXBpbGVkIEhUTUwg","generated_KMF_ID":"14902315741473862267857","productsKey":["features[16863059371473862267857]"],"products":[
+{"class":"org.opencompare.model.Product@6607284071473862267857","generated_KMF_ID":"6607284071473862267857","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@17193790041473862267857","content":"UHVibGlzaGVkIGFzOg==","rawContent":"c3R5bGU9ImJhY2tncm91bmQ6I2RkZDsifCAnJ1B1Ymxpc2hlZCBhcycnOg==","generated_KMF_ID":"17193790041473862267857","feature":["features[16863059371473862267857]"],"product":["products[6607284071473862267857]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@5884640821473862267857","value":"UHVibGlzaGVkIGFzOg==","generated_KMF_ID":"5884640821473862267857"}
+]}
+,
+{"class":"org.opencompare.model.Cell@3595740381473862267857","content":"LmNobQ==","rawContent":"LmNobQ==","generated_KMF_ID":"3595740381473862267857","feature":["features[15910631641473862267857]"],"product":["products[6607284071473862267857]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@7881991671473862267857","value":"LmNobQ==","generated_KMF_ID":"7881991671473862267857"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@15910631641473862267857","name":"TWljcm9zb2Z0IENvbXBpbGVkIEhUTUwgSGVscA==","generated_KMF_ID":"15910631641473862267857","parentGroup":[],"cells":["products[6607284071473862267857]/cells[3595740381473862267857]"]}
+,
+{"class":"org.opencompare.model.Feature@16863059371473862267857","name":"Rm9ybWF0Og==","generated_KMF_ID":"16863059371473862267857","parentGroup":[],"cells":["products[6607284071473862267857]/cells[17193790041473862267857]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "6607284071473862267857",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "15910631641473862267857",
+    "position" : 1
+  }, {
+    "feature" : "16863059371473862267857",
+    "position" : 0
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

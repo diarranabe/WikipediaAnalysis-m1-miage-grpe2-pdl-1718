@@ -1,0 +1,41 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@14704326151473862267859","name":"Q29tcGFyaXNvbl9vZl9lLWJvb2tfZm9ybWF0cyAtIEtGOCAoQW1hem9uIEtpbmRsZSkg","generated_KMF_ID":"14704326151473862267859","productsKey":["features[10715707591473862267859]"],"products":[
+{"class":"org.opencompare.model.Product@2214600611473862267859","generated_KMF_ID":"2214600611473862267859","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@9929547131473862267859","content":"LmF6dzM7IC5henc7IC5rZjg=","rawContent":"LmF6dzM7IC5henc7IC5rZjg=","generated_KMF_ID":"9929547131473862267859","feature":["features[15335975081473862267859]"],"product":["products[2214600611473862267859]"],"interpretation":[
+{"class":"org.opencompare.model.Multiple@546333131473862267859","generated_KMF_ID":"546333131473862267859","subvalues":[
+{"class":"org.opencompare.model.StringValue@15006391071473862267859","value":"IC5rZjg=","generated_KMF_ID":"15006391071473862267859"}
+,
+{"class":"org.opencompare.model.StringValue@8689733351473862267859","value":"LmF6dzM=","generated_KMF_ID":"8689733351473862267859"}
+,
+{"class":"org.opencompare.model.StringValue@5368354931473862267859","value":"IC5henc=","generated_KMF_ID":"5368354931473862267859"}
+]}
+]}
+,
+{"class":"org.opencompare.model.Cell@19253546571473862267859","content":"UHVibGlzaGVkIGFzOg==","rawContent":"c3R5bGU9ImJhY2tncm91bmQ6I2RkZDsifCAnJ1B1Ymxpc2hlZCBhcycnOg==","generated_KMF_ID":"19253546571473862267859","feature":["features[10715707591473862267859]"],"product":["products[2214600611473862267859]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@11199162961473862267859","value":"UHVibGlzaGVkIGFzOg==","generated_KMF_ID":"11199162961473862267859"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@15335975081473862267859","name":"S2luZGxl","generated_KMF_ID":"15335975081473862267859","parentGroup":[],"cells":["products[2214600611473862267859]/cells[9929547131473862267859]"]}
+,
+{"class":"org.opencompare.model.Feature@10715707591473862267859","name":"Rm9ybWF0Og==","generated_KMF_ID":"10715707591473862267859","parentGroup":[],"cells":["products[2214600611473862267859]/cells[19253546571473862267859]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "2214600611473862267859",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "15335975081473862267859",
+    "position" : 1
+  }, {
+    "feature" : "10715707591473862267859",
+    "position" : 0
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@17513387581473862267858","name":"Q29tcGFyaXNvbl9vZl9lLWJvb2tfZm9ybWF0cyAtIGlCb29rIChBcHBsZSkg","generated_KMF_ID":"17513387581473862267858","productsKey":["features[15387916181473862267858]"],"products":[
+{"class":"org.opencompare.model.Product@19198769731473862267858","generated_KMF_ID":"19198769731473862267858","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@4678542271473862267858","content":"Lmlib29rcw==","rawContent":"Lmlib29rcw==","generated_KMF_ID":"4678542271473862267858","feature":["features[5803842781473862267858]"],"product":["products[19198769731473862267858]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@5165455651473862267858","value":"Lmlib29rcw==","generated_KMF_ID":"5165455651473862267858"}
+]}
+,
+{"class":"org.opencompare.model.Cell@4969851473862267858","content":"UHVibGlzaGVkIGFzOg==","rawContent":"c3R5bGU9ImJhY2tncm91bmQ6I2RkZDsifCAnJ1B1Ymxpc2hlZCBhcycnOg==","generated_KMF_ID":"4969851473862267858","feature":["features[15387916181473862267858]"],"product":["products[19198769731473862267858]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@7430931361473862267858","value":"UHVibGlzaGVkIGFzOg==","generated_KMF_ID":"7430931361473862267858"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@15387916181473862267858","name":"Rm9ybWF0Og==","generated_KMF_ID":"15387916181473862267858","parentGroup":[],"cells":["products[19198769731473862267858]/cells[4969851473862267858]"]}
+,
+{"class":"org.opencompare.model.Feature@5803842781473862267858","name":"aUJvb2s=","generated_KMF_ID":"5803842781473862267858","parentGroup":[],"cells":["products[19198769731473862267858]/cells[4678542271473862267858]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "19198769731473862267858",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "15387916181473862267858",
+    "position" : 0
+  }, {
+    "feature" : "5803842781473862267858",
+    "position" : 1
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}

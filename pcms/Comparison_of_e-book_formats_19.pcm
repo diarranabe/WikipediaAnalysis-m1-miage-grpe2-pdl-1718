@@ -1,0 +1,35 @@
+{
+ "pcm" : 
+{"class":"org.opencompare.model.PCM@13063250981473862267859","name":"Q29tcGFyaXNvbl9vZl9lLWJvb2tfZm9ybWF0cyAtIE9wZW4gRWxlY3Ryb25pYyBQYWNrYWdl","generated_KMF_ID":"13063250981473862267859","productsKey":["features[10783409131473862267859]"],"products":[
+{"class":"org.opencompare.model.Product@21269101661473862267859","generated_KMF_ID":"21269101661473862267859","pcm":[""],"cells":[
+{"class":"org.opencompare.model.Cell@6279298141473862267859","content":"Lm9wZg==","rawContent":"Lm9wZg==","generated_KMF_ID":"6279298141473862267859","feature":["features[1356498271473862267859]"],"product":["products[21269101661473862267859]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@16025651471473862267859","value":"Lm9wZg==","generated_KMF_ID":"16025651471473862267859"}
+]}
+,
+{"class":"org.opencompare.model.Cell@14126906281473862267859","content":"UHVibGlzaGVkIGFzOg==","rawContent":"c3R5bGU9ImJhY2tncm91bmQ6I2RkZDsifCAnJ1B1Ymxpc2hlZCBhcycnOg==","generated_KMF_ID":"14126906281473862267859","feature":["features[10783409131473862267859]"],"product":["products[21269101661473862267859]"],"interpretation":[
+{"class":"org.opencompare.model.StringValue@6834147821473862267859","value":"UHVibGlzaGVkIGFzOg==","generated_KMF_ID":"6834147821473862267859"}
+]}
+]}
+],"features":[
+{"class":"org.opencompare.model.Feature@1356498271473862267859","name":"T3BlbiBlQm9vaw==","generated_KMF_ID":"1356498271473862267859","parentGroup":[],"cells":["products[21269101661473862267859]/cells[6279298141473862267859]"]}
+,
+{"class":"org.opencompare.model.Feature@10783409131473862267859","name":"Rm9ybWF0Og==","generated_KMF_ID":"10783409131473862267859","parentGroup":[],"cells":["products[21269101661473862267859]/cells[14126906281473862267859]"]}
+]}
+,
+ "metadata" : {
+  "productPositions" : [ {
+    "product" : "21269101661473862267859",
+    "position" : 1
+  } ],
+  "featurePositions" : [ {
+    "feature" : "1356498271473862267859",
+    "position" : 1
+  }, {
+    "feature" : "10783409131473862267859",
+    "position" : 0
+  } ],
+  "source" : "",
+  "license" : "",
+  "creator" : ""
+}
+}
