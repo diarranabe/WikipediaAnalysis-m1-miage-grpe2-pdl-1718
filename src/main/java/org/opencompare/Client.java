@@ -21,7 +21,7 @@ public class Client {
 
 		Integer matrixSize = Tools.getMatrixSize(pcm);
 
-		System.out.println("La taille de la matrice est "+matrixSize);
+		System.out.println("La taille de la matrice est : "+matrixSize);
 
 
 		System.out.println(Tools.celluleFrequences(pcm));
