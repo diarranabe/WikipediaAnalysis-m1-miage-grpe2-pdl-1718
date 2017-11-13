@@ -2,13 +2,16 @@ package org.opencompare;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.opencompare.api.java.AbstractFeature;
 import org.opencompare.api.java.Cell;
+import org.opencompare.api.java.Feature;
 import org.opencompare.api.java.PCM;
+import org.opencompare.api.java.PCMContainer;
 import org.opencompare.api.java.Product;
 
 public class Tools {
@@ -79,6 +82,62 @@ public class Tools {
 				listeRet.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting()));
 		
 		return counts;
+	}
+
+	public static List<String> getFeatures(PCM p) {
+		
+		List<String> result = new ArrayList<>();
+		List<AbstractFeature> listF = p.getFeatures();
+		for (AbstractFeature f : listF) {
+			result.add(f.getName());
+		}
+		return result;
+	}
+	
+	public static Map<String, Long> mostFrequentFeature(List<PCM> pcmList){
+		
+		List<String> listFeatures = new ArrayList<>(); 
+		for (PCM pcm : pcmList) {
+			List<AbstractFeature> features = pcm.getFeatures();
+			for (AbstractFeature f : features) {
+				listFeatures.add(f.getName());
+			}
+		}
+		
+		Map<String, Long> occurrences = 
+				listFeatures.stream().collect(Collectors.groupingBy(w -> w, Collectors.counting()));
+
+		return sortByValue(occurrences);
+	}
+	
+	private static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
+	    return map.entrySet()
+	              .stream()
+	              .sorted(Map.Entry.comparingByValue(/*Collections.reverseOrder()*/))
+	              .collect(Collectors.toMap(
+	                Map.Entry::getKey, 
+	                Map.Entry::getValue, 
+	                (e1, e2) -> e1, 
+	                LinkedHashMap::new
+	              ));
+	}
+
+	public static  Map<String, Long> mostFrequentProduit(List<PCM> pcmList) {
+		
+		List<String> listProduit = new ArrayList<>(); 
+		for (PCM pcm : pcmList) {
+			List<Product> products = pcm.getProducts();
+			
+			for (Product p : products) {
+				listProduit.add(p.getCells().get(0).getContent());
+			}
+			
+		}
+		
+		Map<String, Long> occurrences = 
+				listProduit.stream().collect(Collectors.groupingBy(w -> w, Collectors.counting()));
+
+		return sortByValue(occurrences);
 	}
 
 

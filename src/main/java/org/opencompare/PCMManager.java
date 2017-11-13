@@ -171,4 +171,13 @@ public class PCMManager {
 	        }
 	    }
 	}
+
+
+	public void printFeatures(){
+		int i=0;
+		for(PCM p : PcmList) {
+			System.out.println(i+":"+p.getName() + ": "+Tools.getFeatures(p));
+			i++;
+		}
+	}
 }
