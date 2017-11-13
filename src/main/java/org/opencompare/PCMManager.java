@@ -11,7 +11,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;
@@ -26,6 +29,7 @@ public class PCMManager {
 
 	List<PCM> PcmList = new ArrayList<>();
 	List<File> pcmFiles = new ArrayList<File>();
+	HashMap<String,Long> featuresFrequencies = new HashMap<String, Long>();
 	
 	public PCMManager(String path) {
 		findPcmFilesRecursively(path);
@@ -39,10 +43,47 @@ public class PCMManager {
 		// TODO Auto-generated method stub
 		PCMManager manager = new PCMManager("pcms2/");
 		
-		manager.printSizes();
-		manager.printPcms();
+		//Map<String, Long> f = Tools.celluleFrequences(manager.PcmList.get(0));
+		manager.setFeaturesFrequencies();
+		Iterator it = manager.featuresFrequencies.entrySet().iterator();
+		
+	    while (it.hasNext()) {
+	        Map.Entry pair = (Map.Entry)it.next();
+	        System.out.println("key: "+pair.getKey() + " = num: " + pair.getValue());
+	    }
+	    
+	    
+	    
+	    //Tools.printMatrix(manager.PcmList.get(0));
+		
+		//manager.printSizes();
+		//manager.printPcms();
+	}
+
+
+	public void setFeaturesFrequencies() {
+		System.out.println("frequence start");
+		Map<String, Long> frequences = new HashMap<String,Long>();
+		for(PCM p : PcmList) {
+			System.out.println("frequence p");
+			HashMap<String, Long> freq = (HashMap<String, Long>) Tools.celluleFrequences(p);
+			Iterator it = frequences.entrySet().iterator();
+		    while (it.hasNext()) {
+		    	Map.Entry pair = (Map.Entry)it.next();
+		        addFeatureFrenquency(pair.getKey().toString(), (Long)pair.getValue());
+		    }
+		}
+		System.out.println("frequence end");
 	}
 	
+	
+	public void addFeatureFrenquency(String label, long number) {
+		if(featuresFrequencies.containsKey(label)) {
+			featuresFrequencies.put(label, featuresFrequencies.get(label) + 1);
+		}else {
+			featuresFrequencies.put(label, number);
+		}
+	}
 	/**
 	 * Affiches les differentes tailles des pcm
 	 */
@@ -84,20 +125,6 @@ public class PCMManager {
 	 * @param path
 	 * @return
 	 */
-	public static PCM loadPcm(String path) {
-		File pcmFile = new File(path);
-
-		PCMLoader loader = new KMFJSONLoader();
-		List<PCMContainer> pcmContainers = null;
-		try {
-			pcmContainers = loader.load(pcmFile);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		PCM pcm = pcmContainers.get(0).getPcm();
-		return pcm;
-	}
 	
 	public static PCM loadPcm(File file) {
 		PCMLoader loader = new KMFJSONLoader();
@@ -110,6 +137,11 @@ public class PCMManager {
 		}
 		PCM pcm = pcmContainers.get(0).getPcm();
 		return pcm;
+	}
+	
+	public static PCM loadPcm(String path) {
+		File pcmFile = new File(path);
+		return loadPcm(pcmFile);
 	}
 
 	/**
@@ -139,5 +171,4 @@ public class PCMManager {
 	        }
 	    }
 	}
-
 }
