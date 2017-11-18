@@ -27,8 +27,16 @@ import org.opencompare.api.java.io.PCMLoader;
  */
 public class PCMManager {
 
-	List<PCM> PcmList = new ArrayList<>();
+	/**
+	 * Lists des fichiers .pcm sur le disque
+	 */
 	List<File> pcmFiles = new ArrayList<File>();
+
+	/**
+	 * Listes des objets java PCM maninipulés
+	 */
+	List<PCM> PcmList = new ArrayList<>();
+	
 	HashMap<String,Long> featuresFrequencies = new HashMap<String, Long>();
 	
 	public PCMManager(String path) {
