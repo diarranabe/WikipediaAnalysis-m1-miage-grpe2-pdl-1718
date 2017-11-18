@@ -188,4 +188,8 @@ public class PCMManager {
 			i++;
 		}
 	}
+	// Afficher les nom des PCM par ordre alphabetique
+	public void setAlphabet(Collection<PCM> pcm){
+		
+	}
 }
