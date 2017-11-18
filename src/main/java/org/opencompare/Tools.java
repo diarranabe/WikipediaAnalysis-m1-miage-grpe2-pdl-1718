@@ -1,5 +1,8 @@
 package org.opencompare;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -13,6 +16,10 @@ import org.opencompare.api.java.Feature;
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;
 import org.opencompare.api.java.Product;
+
+import org.supercsv.io.CsvListWriter;
+import org.supercsv.io.ICsvListWriter;
+import org.supercsv.prefs.CsvPreference;
 
 public class Tools {
 
@@ -159,6 +166,21 @@ public class Tools {
 
 		return sortByValue(occurrences);
 	}
+<<<<<<< HEAD
+=======
+
+	private static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
+	    return map.entrySet()
+	              .stream()
+	              .sorted(Map.Entry.comparingByValue(/*Collections.reverseOrder()*/))
+	              .collect(Collectors.toMap(
+	                Map.Entry::getKey, 
+	                Map.Entry::getValue, 
+	                (e1, e2) -> e1, 
+	                LinkedHashMap::new
+	              ));
+	}
+>>>>>>> b58deed4f950dbe1d696e8c7a32c2d37966f5930
 
 	/**
 	 * Prends une liste de PCM et retourne les products et leurs occurences
@@ -184,6 +206,7 @@ public class Tools {
 	}
 	
 	
+<<<<<<< HEAD
 	/**
 	 * Trie un Map dans l'aodre croissant des valeurs
 	 * @param map
@@ -202,6 +225,34 @@ public class Tools {
 	}
 
 
+=======
+	
+
+	public static void convertMapToCsv(Map<String, Long> map,String fileOutputName) throws Exception {
+
+		StringWriter output = new StringWriter();
+		try (ICsvListWriter listWriter = new CsvListWriter(output, 
+				CsvPreference.STANDARD_PREFERENCE)){
+			for (Map.Entry<String, Long> entry : map.entrySet()){
+				listWriter.write(entry.getKey(), entry.getValue());
+			}
+		}
+
+		System.out.println("[DEBUG] strin to csv : \n"+output.toString());
+		PrintWriter out = new PrintWriter("outputCSV/"+fileOutputName);
+		out.write("sep=,");
+		out.write("\n");
+		out.write(output.toString());
+		out.close();
+
+	}
+	
+	public static void convertStringToFile(String content,String fileName) throws FileNotFoundException{
+		PrintWriter out = new PrintWriter("outputCSV/"+fileName);
+		out.write(content);
+		out.close();
+	}
+>>>>>>> b58deed4f950dbe1d696e8c7a32c2d37966f5930
 
 
 }

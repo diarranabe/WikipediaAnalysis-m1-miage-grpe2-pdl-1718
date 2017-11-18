@@ -117,7 +117,7 @@ public class PCMManager {
 	}
 
 	/**
-	 * Affiches les differentes tailles des pcm
+	 *	Affiches les differentes tailles des pcm
 	 */
 	public void printSizes() {
 		int i = 0;
@@ -204,6 +204,7 @@ public class PCMManager {
 	}
 
 	// Afficher les nom des PCM par ordre alphabetique
+<<<<<<< HEAD
 	public void setAlphabet() {
 		Collections.sort(PcmList, new Comparator<PCM>() {
 			public int compare(PCM pcm1, PCM pcm2) {
@@ -211,5 +212,14 @@ public class PCMManager {
 			}
 		});
 		printPcms();
+=======
+	public void setAlphabet(){
+		Collections.sort(PcmList, new Comparator<PCM>(){
+			public int compare(PCM pcm1, PCM pcm2){
+				return pcm1.getName().compareTo(pcm2.getName());
+			}
+		});
+>>>>>>> b58deed4f950dbe1d696e8c7a32c2d37966f5930
 	}
+		
 }

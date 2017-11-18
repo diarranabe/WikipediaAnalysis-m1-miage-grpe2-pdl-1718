@@ -5,7 +5,7 @@ import org.opencompare.api.java.util.PCMVisitor;
 import org.opencompare.api.java.value.*;
 
 /**
- * Created by gbecan on 02/02/15.
+ *
  */
 public class MyPCMPrinter implements PCMVisitor {
 
