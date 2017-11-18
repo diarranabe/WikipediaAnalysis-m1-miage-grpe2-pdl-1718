@@ -63,6 +63,5 @@ public class GettingStartedTest {
             Files.write(outputFile, csv.getBytes());
             System.out.println("PCM exported to " + outputFile);
         }
-
     }
 }

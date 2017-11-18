@@ -63,6 +63,11 @@ public class Tools {
 	}
 
 	
+	/**
+	 * Prends un pcm en paramètre et retourne un Map de ses cellules 
+	 * @param pcm
+	 * @return
+	 */
 	public static Map<String, Long> celluleFrequences(PCM pcm) {
 		
 		List<String> listeRet = new ArrayList();
@@ -84,8 +89,12 @@ public class Tools {
 		return counts;
 	}
 
+	/**
+	 * Prends un pcm en paramètre et retourne la liste de ses feature
+	 * @param p pcm
+	 * @return List<String>
+	 */
 	public static List<String> getFeatures(PCM p) {
-		
 		List<String> result = new ArrayList<>();
 		List<AbstractFeature> listF = p.getFeatures();
 		for (AbstractFeature f : listF) {
@@ -94,8 +103,49 @@ public class Tools {
 		return result;
 	}
 	
-	public static Map<String, Long> mostFrequentFeature(List<PCM> pcmList){
+	/**
+	 * Prends une liste de PCM et retourne la liste en vrac de tous les features
+	 * @param pcmList
+	 * @return  Map<String, Long>
+	 */
+	public static List<String> allFeatures(List<PCM> pcmList){
 		
+		List<String> listFeatures = new ArrayList<>(); 
+		for (PCM pcm : pcmList) {
+			List<AbstractFeature> features = pcm.getFeatures();
+			for (AbstractFeature f : features) {
+				listFeatures.add(f.getName());
+			}
+		}
+		return listFeatures;
+	}
+	
+	
+	/**
+	 * Prends une liste de PCM et retourne la liste en vrac de tous les products
+	 * @param pcmList
+	 * @return  Map<String, Long>
+	 */
+	public static List<String> allProducts(List<PCM> pcmList){
+		
+		List<String> listProducts = new ArrayList<>(); 
+		for (PCM pcm : pcmList) {
+			List<Product> products = pcm.getProducts();
+			for (Product p : products) {
+				listProducts.add(p.getKeyContent());
+			}
+		}
+		return listProducts;
+	}
+	
+	
+	/**
+	 * Prends une liste de PCM et retourne les features et leurs occurences
+	 * @param pcmList
+	 * @return  Map<String, Long>
+	 */
+	
+	public static Map<String, Long> mostFrequentFeatures(List<PCM> pcmList) {
 		List<String> listFeatures = new ArrayList<>(); 
 		for (PCM pcm : pcmList) {
 			List<AbstractFeature> features = pcm.getFeatures();
@@ -109,20 +159,13 @@ public class Tools {
 
 		return sortByValue(occurrences);
 	}
-	
-	private static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
-	    return map.entrySet()
-	              .stream()
-	              .sorted(Map.Entry.comparingByValue(/*Collections.reverseOrder()*/))
-	              .collect(Collectors.toMap(
-	                Map.Entry::getKey, 
-	                Map.Entry::getValue, 
-	                (e1, e2) -> e1, 
-	                LinkedHashMap::new
-	              ));
-	}
 
-	public static  Map<String, Long> mostFrequentProduit(List<PCM> pcmList) {
+	/**
+	 * Prends une liste de PCM et retourne les products et leurs occurences
+	 * @param pcmList
+	 * @return
+	 */
+	public static  Map<String, Long> mostFrequentProducts(List<PCM> pcmList) {
 		
 		List<String> listProduit = new ArrayList<>(); 
 		for (PCM pcm : pcmList) {
@@ -139,6 +182,26 @@ public class Tools {
 
 		return sortByValue(occurrences);
 	}
+	
+	
+	/**
+	 * Trie un Map dans l'aodre croissant des valeurs
+	 * @param map
+	 * @return
+	 */
+	private static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
+	    return map.entrySet()
+	              .stream()
+	              .sorted(Map.Entry.comparingByValue(/*Collections.reverseOrder()*/))
+	              .collect(Collectors.toMap(
+	                Map.Entry::getKey, 
+	                Map.Entry::getValue, 
+	                (e1, e2) -> e1, 
+	                LinkedHashMap::new
+	              ));
+	}
+
+
 
 
 }
