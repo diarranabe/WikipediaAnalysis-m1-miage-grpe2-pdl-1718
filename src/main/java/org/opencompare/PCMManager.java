@@ -11,6 +11,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -98,7 +100,7 @@ public class PCMManager {
 	
 	
 	/**
-	 * Affiches les differentes tailles des pcm
+	 *	Affiches les differentes tailles des pcm
 	 */
 	public void printSizes() {
 		int i=0;
@@ -181,7 +183,12 @@ public class PCMManager {
 		}
 	}
 	// Afficher les nom des PCM par ordre alphabetique
-	public void setAlphabet(Collection<PCM> pcm){
-		
+	public void setAlphabet(){
+		Collections.sort(PcmList, new Comparator<PCM>(){
+			public int compare(PCM pcm1, PCM pcm2){
+				return pcm1.getName().compareTo(pcm2.getName());
+			}
+		});
 	}
+		
 }

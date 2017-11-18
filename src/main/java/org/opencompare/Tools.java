@@ -109,7 +109,7 @@ public class Tools {
 
 		return sortByValue(occurrences);
 	}
-	
+
 	private static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
 	    return map.entrySet()
 	              .stream()
