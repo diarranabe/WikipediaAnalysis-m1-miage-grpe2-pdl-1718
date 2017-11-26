@@ -34,7 +34,7 @@ public class PCMManager {
 	List<File> pcmFiles = new ArrayList<File>();
 
 	/**
-	 * Listes des objets java PCM maninipulés
+	 * Listes des objets java PCM maninipulÃ©s
 	 */
 	List<PCM> PcmList = new ArrayList<>();
 
@@ -128,7 +128,7 @@ public class PCMManager {
 	}
 
 	/**
-	 * Permet de génerer le pcm dans la liste de pcm(PcmList) à partir de la liste
+	 * Permet de gÃ©nerer le pcm dans la liste de pcm(PcmList) Ã  partir de la liste
 	 * de fichiers (PcmFiles)
 	 */
 	public void syncFiles() {
@@ -140,7 +140,7 @@ public class PCMManager {
 	}
 
 	/**
-	 * Charger un pcm à partir d'un fichier .pcm
+	 * Charger un pcm Ã  partir d'un fichier .pcm
 	 * 
 	 * @param path
 	 * @return
@@ -165,7 +165,7 @@ public class PCMManager {
 	}
 
 	/**
-	 * Ajoute un pcm à la liste de PCM (PcmList)
+	 * Ajoute un pcm Ã  la liste de PCM (PcmList)
 	 * 
 	 * @param pcm
 	 */
@@ -174,7 +174,7 @@ public class PCMManager {
 	}
 
 	/**
-	 * Methode qui permet de passer un repertoire et d'ajouter ses fichiers .pcm à
+	 * Methode qui permet de passer un repertoire et d'ajouter ses fichiers .pcm Ã 
 	 * la liste de fichiers PcmFiles
 	 * 
 	 * @param path
@@ -204,7 +204,6 @@ public class PCMManager {
 	}
 
 	// Afficher les nom des PCM par ordre alphabetique
-<<<<<<< HEAD
 	public void setAlphabet() {
 		Collections.sort(PcmList, new Comparator<PCM>() {
 			public int compare(PCM pcm1, PCM pcm2) {
@@ -212,14 +211,6 @@ public class PCMManager {
 			}
 		});
 		printPcms();
-=======
-	public void setAlphabet(){
-		Collections.sort(PcmList, new Comparator<PCM>(){
-			public int compare(PCM pcm1, PCM pcm2){
-				return pcm1.getName().compareTo(pcm2.getName());
-			}
-		});
->>>>>>> b58deed4f950dbe1d696e8c7a32c2d37966f5930
 	}
 		
 }
