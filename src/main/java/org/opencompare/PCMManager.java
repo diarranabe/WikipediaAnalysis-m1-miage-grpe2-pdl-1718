@@ -5,11 +5,8 @@ package org.opencompare;
 
 import java.io.File;
 import java.io.FileFilter;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -27,6 +24,7 @@ import org.opencompare.api.java.io.PCMLoader;
  *
  */
 public class PCMManager {
+
 
 	/**
 	 * Lists des fichiers .pcm sur le disque
@@ -52,8 +50,8 @@ public class PCMManager {
 		System.out.println("start");
 		// TODO Auto-generated method stub
 		PCMManager manager = new PCMManager("pcms2/");
-		Map<String, Long> mostFrenquents = Tools.mostFrequentFeatures(manager.PcmList);
-		Map<String, Long> mostFrenquentsP = Tools.mostFrequentProducts(manager.PcmList);
+		Map<String, Long> mostFrenquents = Tools.mostFrequentFeature(manager.PcmList);
+		Map<String, Long> mostFrenquentsP = Tools.mostFrequentProduit(manager.PcmList);
 		Iterator it = mostFrenquents.entrySet().iterator();
 		int i = 0;
 		

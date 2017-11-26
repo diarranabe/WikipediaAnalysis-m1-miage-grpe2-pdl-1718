@@ -93,7 +93,7 @@ public class Tools {
 		pcm.accept(v);
 		Map<String, List<String>> cellsTypes = v.getResult();
 		
-		//TODO - trouver une formule pour calculer le taux d'homogÃ©nÃ©itÃ© de chaque liste
+		//TODO - trouver une formule pour calculer le taux d'homog�n�it� de chaque liste
 		return cellsTypes;
 	}
 	public static List<String> getFeatures(PCM p) {
