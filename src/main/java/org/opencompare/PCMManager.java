@@ -27,7 +27,7 @@ public class PCMManager {
 
 
 	/**
-	 * Lists des fichiers .pcm sur le disque
+	 * Liste des fichiers .pcm sur le disque
 	 */
 	List<File> pcmFiles = new ArrayList<File>();
 
