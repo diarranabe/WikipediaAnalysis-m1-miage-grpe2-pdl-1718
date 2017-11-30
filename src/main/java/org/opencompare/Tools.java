@@ -8,12 +8,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.StringUtils;
 import org.opencompare.api.java.AbstractFeature;
 import org.opencompare.api.java.Cell;
 import org.opencompare.api.java.Feature;
@@ -24,6 +26,8 @@ import org.opencompare.api.java.Product;
 import org.supercsv.io.CsvListWriter;
 import org.supercsv.io.ICsvListWriter;
 import org.supercsv.prefs.CsvPreference;
+
+import sun.security.krb5.internal.ccache.CCacheOutputStream;
 
 public class Tools {
 
@@ -38,7 +42,7 @@ public class Tools {
 	}
 
 	public static Map<String,Integer> mapDesCellules(PCM pcm) {
-		
+
 		Map<String, Integer> map = new HashMap<>();
 
 		List<Product> listProduit = pcm.getProducts();
@@ -47,17 +51,17 @@ public class Tools {
 
 			List<Cell> listCell= p.getCells();
 			for (Cell c : listCell) {
-				
+
 				map.put(c.getContent(),1);
 			}
-			
+
 		}
 		return map;
 	}
-	
+
 
 	public static void printMatrix(PCM pcm) {
-		
+
 		Map<String, Integer> map = new HashMap<>();
 
 		System.out.println(pcm.getFeatures());
@@ -73,14 +77,14 @@ public class Tools {
 		}
 	}
 
-	
+
 	/**
 	 * Prends un pcm en paramètre et retourne un Map de ses cellules 
 	 * @param pcm
 	 * @return
 	 */
 	public static Map<String, Long> celluleFrequences(PCM pcm) {
-		
+
 		List<String> listeRet = new ArrayList();
 
 		List<Product> listProduit = pcm.getProducts();
@@ -90,13 +94,13 @@ public class Tools {
 			List<Cell> cells = p.getCells();
 			for (Cell cell : cells) {
 				System.out.println(cell.getContent());
-					listeRet.add(cell.getContent());
+				listeRet.add(cell.getContent());
 			}
 		}
-		
+
 		Map<String, Long> counts =
 				listeRet.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting()));
-		
+
 		return counts;
 	}
 
@@ -113,14 +117,14 @@ public class Tools {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Prends une liste de PCM et retourne la liste en vrac de tous les features
 	 * @param pcmList
 	 * @return  Map<String, Long>
 	 */
 	public static List<String> allFeatures(List<PCM> pcmList){
-		
+
 		List<String> listFeatures = new ArrayList<>(); 
 		for (PCM pcm : pcmList) {
 			List<AbstractFeature> features = pcm.getFeatures();
@@ -130,15 +134,15 @@ public class Tools {
 		}
 		return listFeatures;
 	}
-	
-	
+
+
 	/**
 	 * Prends une liste de PCM et retourne la liste en vrac de tous les products
 	 * @param pcmList
 	 * @return  Map<String, Long>
 	 */
 	public static List<String> allProducts(List<PCM> pcmList){
-		
+
 		List<String> listProducts = new ArrayList<>(); 
 		for (PCM pcm : pcmList) {
 			List<Product> products = pcm.getProducts();
@@ -148,14 +152,55 @@ public class Tools {
 		}
 		return listProducts;
 	}
-	
-	
+
+	/**
+	 * Prends une liste de PCM et retourne la liste en vrac de tous les products
+	 * @param pcmList
+	 * @return  Map<String, Long>
+	 */
+	public static Map<String,Double> homogeneitePCM(PCM pcm){
+
+
+		Map<String, Double> result = new HashMap(); 
+		CellTypePCMVisitor visitor = new CellTypePCMVisitor();
+
+		visitor.visit(pcm);
+		Map<String, List<String>> resultVisit = visitor.getResult();
+
+		for (AbstractFeature f : pcm.getFeatures()) {
+			if(!StringUtils.isEmpty(f.getName())) {
+				double value = homogeneiteColumn(resultVisit.get(f.getName()));
+				result.put(f.getName(),value);
+			}
+		}
+		return result;
+	}
+
+	private static double homogeneiteColumn(List<String> listType) {
+
+		String predominant = listType.get(0);
+		long countPredominant = Collections.frequency(listType, listType.get(0));;
+
+		for(int i=1;i<listType.size();i++) {
+			int currentOccurrence = Collections.frequency(listType, listType.get(i));
+			if(currentOccurrence>countPredominant) {
+				predominant = listType.get(i);
+				countPredominant = currentOccurrence;
+			}
+		}
+
+		double l = (double)countPredominant/(double)listType.size();
+		return l;
+	}
+
+
+
 	/**
 	 * Prends une liste de PCM et retourne les features et leurs occurences
 	 * @param pcmList
 	 * @return  Map<String, Long>
 	 */
-	
+
 	public static Map<String, Long> mostFrequentFeatures(List<PCM> pcmList) {
 		List<String> listFeatures = new ArrayList<>(); 
 		for (PCM pcm : pcmList) {
@@ -164,7 +209,7 @@ public class Tools {
 				listFeatures.add(f.getName());
 			}
 		}
-		
+
 		Map<String, Long> occurrences = 
 				listFeatures.stream().collect(Collectors.groupingBy(w -> w, Collectors.counting()));
 
@@ -180,42 +225,67 @@ public class Tools {
 	 * @return
 	 */
 	public static  Map<String, Long> mostFrequentProducts(List<PCM> pcmList) {
-		
+
 		List<String> listProduit = new ArrayList<>(); 
 		for (PCM pcm : pcmList) {
 			List<Product> products = pcm.getProducts();
-			
+
 			for (Product p : products) {
 				listProduit.add(p.getCells().get(0).getContent());
 			}
-			
+
 		}
-		
+
 		Map<String, Long> occurrences = 
 				listProduit.stream().collect(Collectors.groupingBy(w -> w, Collectors.counting()));
 
 		return sortByValue(occurrences);
 	}
-	
-	
+
+	/**
+	 * Affiches les differentes tailles des pcm
+	 */
+	public static String printSizes(List<PCM> pcmList)  {
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("\"sep=,\"\n");
+		sb.append("namePCM,nbLigne,nbColone,tailleMatrice\n");
+		for(PCM p : pcmList) {
+			String line = "\""+p.getName() + "\"" + "," 
+					+ p.getProducts().size() 
+					+ "," + p.getFeatures().size()
+					+ "," + p.getProducts().size() * p.getFeatures().size();
+			sb.append(line).append("\n");
+		}
+
+		try {
+			convertStringToFile(sb.toString(),"matrixSize.csv");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return sb.toString();
+	}
+
+
+
 	/**
 	 * Trie un Map dans l'aodre croissant des valeurs
 	 * @param map
 	 * @return
 	 */
 	public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
-	    return map.entrySet()
-	              .stream()
-	              .sorted(Map.Entry.comparingByValue(/*Collections.reverseOrder()*/))
-	              .collect(Collectors.toMap(
-	                Map.Entry::getKey, 
-	                Map.Entry::getValue, 
-	                (e1, e2) -> e1, 
-	                LinkedHashMap::new
-	              ));
+		return map.entrySet()
+				.stream()
+				.sorted(Map.Entry.comparingByValue(/*Collections.reverseOrder()*/))
+				.collect(Collectors.toMap(
+						Map.Entry::getKey, 
+						Map.Entry::getValue, 
+						(e1, e2) -> e1, 
+						LinkedHashMap::new
+						));
 	}
 
-	
+
 
 	public static void convertMapToCsv(Map<String, Long> map,String fileOutputName) throws Exception {
 
@@ -229,19 +299,19 @@ public class Tools {
 
 		System.out.println("[DEBUG] strin to csv : \n"+output.toString());
 		PrintWriter out = new PrintWriter("outputCSV/"+fileOutputName);
-//		out.write("sep=,");
-//		out.write("\n");
+		//		out.write("sep=,");
+		//		out.write("\n");
 		out.write(output.toString());
 		out.close();
 
 	}
-	
+
 	public static void convertStringToFile(String content,String fileName) throws FileNotFoundException{
 		PrintWriter out = new PrintWriter("outputCSV/"+fileName);
 		out.write(content);
 		out.close();
 	}
-	
+
 	/**
 	 * Trouve les products/features qui ont des noms ilisibles(cahs speciaux...)  à partir de données csv
 	 * @param path
@@ -279,7 +349,7 @@ public class Tools {
 		} catch (NumberFormatException | IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		data.put("names", Long.valueOf(""+names));
 		data.put("noNames", Long.valueOf(noNames));
 		return data;

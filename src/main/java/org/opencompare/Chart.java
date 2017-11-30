@@ -18,9 +18,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.knowm.xchart.BitmapEncoder;
 import org.knowm.xchart.CategoryChart;
 import org.knowm.xchart.CategoryChartBuilder;
 import org.knowm.xchart.SwingWrapper;
+import org.knowm.xchart.BitmapEncoder.BitmapFormat;
 import org.knowm.xchart.style.Styler.LegendPosition;
 
 /**
@@ -36,7 +38,7 @@ import org.knowm.xchart.style.Styler.LegendPosition;
  */
 public class Chart implements PCMChart<CategoryChart> {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 
 		PCMManager manager = new PCMManager("pcms2/");
 		Map<String, Long> feature = Tools.mostFrequentFeatures(manager.PcmList);
@@ -58,10 +60,10 @@ public class Chart implements PCMChart<CategoryChart> {
 		chart.getStyler().setHasAnnotations(true);
 		chart.getStyler().setPlotGridLinesVisible(false);
 
-		// chart.getStyler().setChartBackgroundColor(Color.RED); // background
-		// chart.getStyler().setPlotBackgroundColor(Color.RED); // back of all bars
-		// chart.getStyler().setAxisTickLabelsColor(Color.RED); // x and y labels color
-		// chart.getStyler().setChartFontColor(Color.RED); // labels around
+		 chart.getStyler().setChartBackgroundColor(Color.RED); // background
+		 chart.getStyler().setPlotBackgroundColor(Color.RED); // back of all bars
+		 chart.getStyler().setAxisTickLabelsColor(Color.RED); // x and y labels color
+		 chart.getStyler().setChartFontColor(Color.RED); // labels around
 
 		PCMManager manager = new PCMManager("pcms2/");
 		Map<String, Long> feature = Tools.mostFrequentFeatures(manager.PcmList);
@@ -96,7 +98,7 @@ public class Chart implements PCMChart<CategoryChart> {
 		return chart;
 	}
 
-	public static void showChart(Map<String, Long> hashMap, String title, String legend) {
+	public static void showChart(Map<String, Long> hashMap, String title, String legend)  {
 		CategoryChart chart = new CategoryChartBuilder().width(800).height(600).title(title + " occurences Histogram")
 				.xAxisTitle(legend).yAxisTitle("Values").build();
 		// Customize Chart
@@ -134,6 +136,11 @@ public class Chart implements PCMChart<CategoryChart> {
 				"All data ==> Avg: " + (int) getAverage(allValuesList) + ", Sd:" + Math.sqrt(getAverage(allValuesList)),
 				keysList, valuesList);
 		new SwingWrapper<CategoryChart>(chart).displayChart();
+		try {
+			BitmapEncoder.saveBitmap(chart, "./charts/"+title, BitmapFormat.JPG);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static double getAverage(ArrayList<Integer> marks) {

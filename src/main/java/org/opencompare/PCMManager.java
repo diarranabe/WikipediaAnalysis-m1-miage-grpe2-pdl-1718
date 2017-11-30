@@ -55,20 +55,25 @@ public class PCMManager {
 		Iterator it = features.entrySet().iterator();
 		int i = 0;
 		Chart.showChart(products,"Products","");
-		Chart.showChart(Chart.loadCsvData("outputCSV/products.csv"),"Products 2","");
+		//		Chart.showChart(Chart.loadCsvData("outputCSV/products.csv"),"Products 2",""); // csv file is created at the end of this function
 		Chart.showChart(features,"Features","");
-		Chart.showChart(Chart.loadCsvData("outputCSV/features.csv"),"Features 2","");
+		//		Chart.showChart(Chart.loadCsvData("outputCSV/features.csv"),"Features 2","");
 		try {
 			Tools.convertMapToCsv(products, "products.csv");
 			Tools.convertMapToCsv(features, "features.csv");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}	
+		}
+		Tools.printSizes(manager.PcmList);
+		
+		System.out.println("\n\n\nHOMOGENEITE");
+		System.out.println(Tools.homogeneitePCM(manager.PcmList.get(4)));
+
 		System.out.println("end");
 	}
 
-	
+
 
 	/**
 	 * Affiches les differentes tailles des pcm
