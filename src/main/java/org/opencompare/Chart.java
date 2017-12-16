@@ -1,29 +1,20 @@
 package org.opencompare;
 
-import java.awt.Color;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import org.knowm.xchart.BitmapEncoder;
+import org.knowm.xchart.BitmapEncoder.BitmapFormat;
 import org.knowm.xchart.CategoryChart;
 import org.knowm.xchart.CategoryChartBuilder;
 import org.knowm.xchart.SwingWrapper;
-import org.knowm.xchart.BitmapEncoder.BitmapFormat;
 import org.knowm.xchart.style.Styler.LegendPosition;
+
+import java.awt.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
+import java.util.List;
+import java.util.Map.Entry;
 
 /**
  * Basic Bar Chart
@@ -41,8 +32,8 @@ public class Chart implements PCMChart<CategoryChart> {
 	public static void main(String[] args)  {
 
 		PCMManager manager = new PCMManager("pcms2/");
-		Map<String, Long> feature = Tools.mostFrequentFeatures(manager.PcmList);
-		Map<String, Long> products = Tools.mostFrequentProducts(manager.PcmList);
+		Map<String, Long> feature = Tools.featuresFrequencies(manager.pcmList);
+		Map<String, Long> products = Tools.productsFrequencies(manager.pcmList);
 		// showChart(feature);
 		showChart(loadCsvData("outputCSV/products.csv"), "", "");
 		showChart(products, "Products", "10 most frequents");
@@ -66,8 +57,8 @@ public class Chart implements PCMChart<CategoryChart> {
 		 chart.getStyler().setChartFontColor(Color.RED); // labels around
 
 		PCMManager manager = new PCMManager("pcms2/");
-		Map<String, Long> feature = Tools.mostFrequentFeatures(manager.PcmList);
-		Map<String, Long> products = Tools.mostFrequentProducts(manager.PcmList);
+		Map<String, Long> feature = Tools.featuresFrequencies(manager.pcmList);
+		Map<String, Long> products = Tools.productsFrequencies(manager.pcmList);
 		// Series
 		ArrayList<String> keysList = new ArrayList<>();
 		ArrayList<Integer> valuesList = new ArrayList<>();

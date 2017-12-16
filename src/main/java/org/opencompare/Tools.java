@@ -23,6 +23,11 @@ public class Tools {
      */
     public static int PCM_CONFORM_RATIO = 80; // Default
 
+    /**
+     * Le ratio pour affirmer deux pcm sont simillaires
+     */
+    public static int PCM_SIMILLARITY_RATIO = 100; // Default
+
 
     /**
      * Get PCM matrix size
@@ -52,6 +57,11 @@ public class Tools {
         return map;
     }
 
+    /**
+     * Affiche un pcm en console
+     *
+     * @param pcm
+     */
     public static void printMatrix(PCM pcm) {
 
         Map<String, Integer> map = new HashMap<>();
@@ -267,6 +277,13 @@ public class Tools {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
     }
 
+    /**
+     * Converti une map en fichier csv
+     *
+     * @param map            la map
+     * @param fileOutputName nom du fichier de sortie
+     * @throws Exception exception
+     */
     public static void convertMapToCsv(Map<String, Long> map, String fileOutputName) throws Exception {
 
         StringWriter output = new StringWriter();
@@ -472,5 +489,117 @@ public class Tools {
     public static boolean productNameConform(String product) {
         String str = product.replaceAll("([^ ()éèçà_,a-zA-Z0-9'])", "");
         return str.equals(product);
+    }
+
+    /**
+     * Ratio de simillarité des features de deux pcm
+     *
+     * @param pcm1 pcm 1
+     * @param pcm2 pcm2
+     * @return float
+     */
+    public static float pcmFeaturesSimilarityRatio(PCM pcm1, PCM pcm2) {
+        float ratiof = 0;
+        List<AbstractFeature> features1 = pcm1.getFeatures();
+        List<AbstractFeature> features2 = pcm2.getFeatures();
+        if (features1.size() > features2.size()) {
+            for (AbstractFeature f1 : features1) {
+                for (AbstractFeature f2 : features2) {
+                    if (f1.getName().equals(f2.getName())) {
+//                        System.out.println(f1.getName()+" ,,, "+f2.getName());
+                        ratiof++;
+                    }
+                }
+            }
+            ratiof = ((ratiof / (float) features2.size()) * 100);
+        } else {
+            for (AbstractFeature f2 : features2) {
+                for (AbstractFeature f1 : features1) {
+                    if (f1.getName().equals(f2.getName())) {
+                        ratiof++;
+                    }
+                }
+            }
+            ratiof = ((ratiof / (float) features1.size()) * 100);
+        }
+        return ratiof;
+    }
+
+    /**
+     * Ratio de simillarité des features de deux pcm
+     *
+     * @param pcm1 pcm 1
+     * @param pcm2 pcm 2
+     * @return float
+     */
+    public static float pcmProductsSimilarityRatio(PCM pcm1, PCM pcm2) {
+        float ratiop = 0;
+        List<Product> products1 = pcm1.getProducts();
+        List<Product> products2 = pcm2.getProducts();
+
+        if (products1.size() > products2.size()) {
+            for (Product p1 : products1) {
+                for (Product p2 : products2) {
+                    if (p1.getKeyContent().equals(p2.getKeyContent())) {
+                        ratiop++;
+                    }
+                }
+            }
+            ratiop = ((ratiop / (float) products2.size()) * 100);
+        } else {
+            for (Product p2 : products2) {
+                for (Product p1 : products1) {
+                    if (p1.getKeyContent().equals(p2.getKeyContent())) {
+                        ratiop++;
+                    }
+                }
+            }
+            ratiop = ((ratiop / (float) products1.size()) * 100);
+        }
+        return ratiop;
+    }
+
+    /**
+     * Simillarité entre deux pcm
+     *
+     * @param pcm1 pcm1
+     * @param pcm2 pcm2
+     * @return float
+     */
+    public static float pcmSimilarities(PCM pcm1, PCM pcm2) {
+        float r = (pcmFeaturesSimilarityRatio(pcm1, pcm2) + pcmProductsSimilarityRatio(pcm1, pcm2)) / 2;
+        return r;
+    }
+
+
+    /**
+     * Liste des pcm simmilaires à un autre pcm
+     *
+     * @param pcm     pcm entrée
+     * @param pcmList la liste de pcm à comparer
+     * @return liste
+     */
+    public static List<PCM> pcmSimillarityList(PCM pcm, List<PCM> pcmList) {
+        List<PCM> simpcm = new ArrayList<>();
+        for (PCM p : pcmList) {
+            if (!(pcm.equals(p)) && (pcmSimilarities(pcm, p) >= PCM_SIMILLARITY_RATIO)) {
+                simpcm.add(p);
+            }
+        }
+        return simpcm;
+    }
+
+    /**
+     * Les similaritées entre tous les pcm
+     *
+     * @param pcmList liste de pcm
+     * @return map nom de pcm,nombre de pcm simmilaire
+     */
+    public static Map<String, Long> pcmSimilarities(List<PCM> pcmList) {
+        Map<String, Long> map = new HashMap<String, Long>();
+        for (PCM p : pcmList) {
+            map.put(p.getName(), Long.valueOf(pcmSimillarityList(p, pcmList).size()));
+        }
+        return map;
     }
 }
