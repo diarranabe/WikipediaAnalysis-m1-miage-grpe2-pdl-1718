@@ -473,4 +473,13 @@ public class Tools {
         String str = product.replaceAll("([^ ()éèçà_,a-zA-Z0-9'])", "");
         return str.equals(product);
     }
+    /**
+     * Verifie si un pcm est bon
+     * @param pcm le pcm
+     * @return true en cas de succès
+     */
+    public static boolean conformPCM(PCM pcm) {
+        return pcmProductsConformRatio(pcm)>=PCM_CONFORM_RATIO && pcmFeaturesConformRatio(pcm)>=PCM_CONFORM_RATIO;
+    }
+
 }
