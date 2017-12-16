@@ -490,6 +490,29 @@ public class Tools {
         String str = product.replaceAll("([^ ()éèçà_,a-zA-Z0-9'])", "");
         return str.equals(product);
     }
+    /**
+     * Verifie si un pcm est bon
+     * @param pcm le pcm
+     * @return true en cas de succès
+     */
+    public static boolean conformPCM(PCM pcm) {
+        return pcmProductsConformRatio(pcm)>=PCM_CONFORM_RATIO && pcmFeaturesConformRatio(pcm)>=PCM_CONFORM_RATIO;
+    }
+    /**
+     * Retourne les bon pcm d'une liste
+     * @param allPcm liste de pcm
+     * @return liste de bon pcm
+     */
+    public static List<PCM> conformsPCM(List<PCM> allPcm){
+        List<PCM> conformPcms = new ArrayList<>();
+        for(PCM pcm : allPcm) {
+            if(conformPCM(pcm)) {
+                conformPcms.add(pcm);
+            }
+        }
+        return conformPcms;
+    }
+
 
     /**
      * Ratio de simillarité des features de deux pcm
