@@ -1,21 +1,18 @@
 package org.opencompare;
 
-
 import java.io.File;
 import java.io.FileFilter;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.opencompare.Tools;
 import org.opencompare.api.java.PCM;
 import org.opencompare.api.java.PCMContainer;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
@@ -33,10 +30,9 @@ public class PCMManager {
 	List<File> pcmFiles = new ArrayList<File>();
 
 	/**
-	 * Listes des objets java PCM maninipulés
+	 * Listes des objets java PCM maninipulï¿½s
 	 */
 	List<PCM> PcmList = new ArrayList<>();
-
 
 	public PCMManager(String path) {
 		findPcmFilesRecursively(path);
@@ -54,10 +50,11 @@ public class PCMManager {
 		Map<String, Long> products = Tools.mostFrequentProducts(manager.PcmList);
 		Iterator it = features.entrySet().iterator();
 		int i = 0;
-		Chart.showChart(products,"Products","");
-		//		Chart.showChart(Chart.loadCsvData("outputCSV/products.csv"),"Products 2",""); // csv file is created at the end of this function
-		Chart.showChart(features,"Features","");
-		//		Chart.showChart(Chart.loadCsvData("outputCSV/features.csv"),"Features 2","");
+		Chart.showChart(products, "Products", "");
+		// Chart.showChart(Chart.loadCsvData("outputCSV/products.csv"),"Products 2","");
+		// // csv file is created at the end of this function
+		Chart.showChart(features, "Features", "");
+		// Chart.showChart(Chart.loadCsvData("outputCSV/features.csv"),"Features 2","");
 		try {
 			Tools.convertMapToCsv(products, "products.csv");
 			Tools.convertMapToCsv(features, "features.csv");
@@ -66,14 +63,23 @@ public class PCMManager {
 			e.printStackTrace();
 		}
 		Tools.printSizes(manager.PcmList);
-		
+
 		System.out.println("\n\n\nHOMOGENEITE");
-		System.out.println(Tools.homogeneitePCM(manager.PcmList.get(4)));
+		List<String> homogeneites = new ArrayList<>();
+		homogeneites.add("Matrice;Feature;TypePredominante;taux");
+		for (PCM pcm : manager.PcmList) {
+			homogeneites.addAll(Tools.homogeneitePCM(pcm));
+		}
+		// ecriture en csv
+		try {
+			Files.write(Paths.get("outputCSV/homogeneite.csv"), homogeneites, Charset.defaultCharset());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		System.out.println("end");
 	}
-
-
 
 	/**
 	 * Affiches les differentes tailles des pcm
@@ -87,7 +93,7 @@ public class PCMManager {
 	}
 
 	/**
-	 *	Affiches les differentes tailles des pcm
+	 * Affiches les differentes tailles des pcm
 	 */
 	public void printSizes() {
 		int i = 0;
@@ -98,7 +104,7 @@ public class PCMManager {
 	}
 
 	/**
-	 * Permet de génerer le pcm dans la liste de pcm(PcmList) à partir de la liste
+	 * Permet de gï¿½nerer le pcm dans la liste de pcm(PcmList) ï¿½ partir de la liste
 	 * de fichiers (PcmFiles)
 	 */
 	public void syncFiles() {
@@ -110,7 +116,7 @@ public class PCMManager {
 	}
 
 	/**
-	 * Charger un pcm à partir d'un fichier .pcm
+	 * Charger un pcm ï¿½ partir d'un fichier .pcm
 	 * 
 	 * @param path
 	 * @return
@@ -135,7 +141,7 @@ public class PCMManager {
 	}
 
 	/**
-	 * Ajoute un pcm à la liste de PCM (PcmList)
+	 * Ajoute un pcm ï¿½ la liste de PCM (PcmList)
 	 * 
 	 * @param pcm
 	 */
@@ -144,7 +150,7 @@ public class PCMManager {
 	}
 
 	/**
-	 * Methode qui permet de passer un repertoire et d'ajouter ses fichiers .pcm à
+	 * Methode qui permet de passer un repertoire et d'ajouter ses fichiers .pcm ï¿½
 	 * la liste de fichiers PcmFiles
 	 * 
 	 * @param path
@@ -181,5 +187,5 @@ public class PCMManager {
 			}
 		});
 		printPcms();
-	}	
+	}
 }
