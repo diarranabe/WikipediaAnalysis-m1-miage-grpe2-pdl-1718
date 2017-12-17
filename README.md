@@ -12,7 +12,7 @@ Simillarity of the two pcm products.
 Simillarity between two pcm.
 Compare a PCM to the other PCM of the dataset.
         
-## Import a PCM dataset
+#Import a PCM dataset
 1- Define the files that you want to load.
 
 2- Load the PCMs
@@ -22,7 +22,7 @@ Use loadAllPcmFromDirectory(pathOfYourFiles) to get directly a PCM list.
         List<PCM> pcmlist = Tools.loadAllPcmFromDirectory("yourPath");
 ```
 
-## Analyse the dataset
+# Analyse the dataset
 
 ## To get the conform PCMs
 The are many PCM in the dataset the API can't analyse because they are no features or products or they contains unreadble characters.
