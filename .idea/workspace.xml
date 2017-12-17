@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="653c2035-a8eb-4936-8a95-347796739576" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Features.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Products.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/Client.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/R.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/CellTypePCMVisitor.java" afterPath="$PROJECT_DIR$/src/main/java/org/opencompare/CellTypePCMVisitor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/Chart.java" afterPath="$PROJECT_DIR$/src/main/java/org/opencompare/Chart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/CsvTools.java" afterPath="$PROJECT_DIR$/src/main/java/org/opencompare/CsvTools.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/PCMManager.java" afterPath="$PROJECT_DIR$/src/main/java/org/opencompare/PCMManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/Tools.java" afterPath="$PROJECT_DIR$/src/main/java/org/opencompare/Tools.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/opencompare/PCMManagerTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/opencompare/PCMManagerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/PCMManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="291">
-              <caret line="62" column="71" lean-forward="false" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
+              <caret line="63" column="69" lean-forward="false" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/Chart.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+              <caret line="29" column="51" lean-forward="false" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
               <folding>
                 <element signature="docComment;method#getChart#0;class#Chart#0" expanded="false" />
                 <element signature="method#getChart#0;class#Chart#0" expanded="false" />
@@ -66,14 +56,14 @@
                 <element signature="method#getChart#1;class#Chart#0" expanded="false" />
                 <element signature="docComment;method#getChart#2;class#Chart#0" expanded="false" />
                 <element signature="method#getChart#2;class#Chart#0" expanded="false" />
-                <element signature="e#7229#7230#0" expanded="true" />
-                <element signature="e#7247#7248#0" expanded="true" />
+                <element signature="e#7391#7408#0" expanded="true" />
                 <element signature="method#getAverage#0;class#Chart#0" expanded="false" />
                 <element signature="method#getVariance#0;class#Chart#0" expanded="false" />
-                <element signature="e#7863#7880#0" expanded="true" />
+                <element signature="e#9459#9460#0" expanded="true" />
+                <element signature="e#9477#9478#0" expanded="true" />
                 <element signature="method#sortByValue#0;class#Chart#0" expanded="false" />
-                <element signature="class#10197:10428" expanded="false" />
-                <element signature="method#compare#0;class#10197:10428" expanded="false" />
+                <element signature="class#9632:9863" expanded="false" />
+                <element signature="method#compare#0;class#9632:9863" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -125,11 +115,11 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/Tools.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
               <folding>
                 <element signature="docComment;field#PCM_CONFORM_RATIO#0;class#Tools#0" expanded="false" />
-                <element signature="e#7900#7906#0" expanded="true" />
-                <element signature="e#15843#15857#0" expanded="true" />
+                <element signature="e#7971#7977#0" expanded="true" />
+                <element signature="e#15914#15928#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -561,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513473067635</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Affichage et Sauvegarde en JPG des diagrammes directement à partir du programme &#10;Il est possible d'afficher directement un Map&lt;String, Long&gt; et enregistrer la capture ou charger un csv pour visualiser les données sous formes de diagrammes pour :&#10;-La conformité des features/products de tout le dataset ou seulement les matrices conformes&#10;-Les Occurrences des features / products de tout le dataset ou seulement les matrices conformes&#10;-La similarité des matrices de tout le dataset ou seulement les matrices conformes">
+      <created>1513521144993</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1513521144993</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -647,7 +644,8 @@
     <MESSAGE value="Similarity done : Comparaison des pcm pour trouver ceux qui des caractéristiques similaires&#10;     * Ratio de simillarité des features de deux pcm&#10;    public static float pcmFeaturesSimilarityRatio(PCM pcm1, PCM pcm2) &#10;&#10;     * Ratio de simillarité des features de deux pcm&#10;    public static float pcmProductsSimilarityRatio(PCM pcm1, PCM pcm2)&#10;&#10;     * Simillarité e,tre deux pcm&#10;    public static float pcmSimilarities(PCM pcm1, PCM pcm2)&#10;&#10; Liste des pcm simmilaires à un autre pcm&#10;    public static List&lt;PCM&gt; pcmSimillarityList(PCM pcm, List&lt;PCM&gt; pcmList)&#10;&#10;&#10;&#10;     * Les similaritées entre tous les pcm&#10;        public static Map&lt;String, Long&gt; pcmSimilarities(List&lt;PCM&gt; pcmList)" />
     <MESSAGE value="Test pour featuresFrequencies et ProductFrequencies" />
     <MESSAGE value="Big Summary : CsvTools.java qui contient des methodes (une dizaine environ) pour faire tout ce qui est output en csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Big Summary : CsvTools.java qui contient des methodes (une dizaine environ) pour faire tout ce qui est output en csv" />
+    <MESSAGE value="Affichage et Sauvegarde en JPG des diagrammes directement à partir du programme &#10;Il est possible d'afficher directement un Map&lt;String, Long&gt; et enregistrer la capture ou charger un csv pour visualiser les données sous formes de diagrammes pour :&#10;-La conformité des features/products de tout le dataset ou seulement les matrices conformes&#10;-Les Occurrences des features / products de tout le dataset ou seulement les matrices conformes&#10;-La similarité des matrices de tout le dataset ou seulement les matrices conformes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Affichage et Sauvegarde en JPG des diagrammes directement à partir du programme &#10;Il est possible d'afficher directement un Map&lt;String, Long&gt; et enregistrer la capture ou charger un csv pour visualiser les données sous formes de diagrammes pour :&#10;-La conformité des features/products de tout le dataset ou seulement les matrices conformes&#10;-Les Occurrences des features / products de tout le dataset ou seulement les matrices conformes&#10;-La similarité des matrices de tout le dataset ou seulement les matrices conformes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -657,7 +655,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/opencompare/Chart.java</url>
-          <line>91</line>
+          <line>90</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -692,8 +690,8 @@
           <caret line="466" column="0" lean-forward="false" selection-start-line="466" selection-start-column="0" selection-end-line="466" selection-end-column="0" />
           <folding>
             <element signature="docComment;field#PCM_CONFORM_RATIO#0;class#Tools#0" expanded="false" />
-            <element signature="e#7900#7906#0" expanded="true" />
-            <element signature="e#15843#15857#0" expanded="true" />
+            <element signature="e#7971#7977#0" expanded="true" />
+            <element signature="e#15914#15928#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -809,11 +807,11 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/Tools.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding>
             <element signature="docComment;field#PCM_CONFORM_RATIO#0;class#Tools#0" expanded="false" />
-            <element signature="e#7900#7906#0" expanded="true" />
-            <element signature="e#15843#15857#0" expanded="true" />
+            <element signature="e#7971#7977#0" expanded="true" />
+            <element signature="e#15914#15928#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -865,7 +863,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/Chart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+          <caret line="29" column="51" lean-forward="false" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
           <folding>
             <element signature="docComment;method#getChart#0;class#Chart#0" expanded="false" />
             <element signature="method#getChart#0;class#Chart#0" expanded="false" />
@@ -873,14 +871,14 @@
             <element signature="method#getChart#1;class#Chart#0" expanded="false" />
             <element signature="docComment;method#getChart#2;class#Chart#0" expanded="false" />
             <element signature="method#getChart#2;class#Chart#0" expanded="false" />
-            <element signature="e#7229#7230#0" expanded="true" />
-            <element signature="e#7247#7248#0" expanded="true" />
+            <element signature="e#7391#7408#0" expanded="true" />
             <element signature="method#getAverage#0;class#Chart#0" expanded="false" />
             <element signature="method#getVariance#0;class#Chart#0" expanded="false" />
-            <element signature="e#7863#7880#0" expanded="true" />
+            <element signature="e#9459#9460#0" expanded="true" />
+            <element signature="e#9477#9478#0" expanded="true" />
             <element signature="method#sortByValue#0;class#Chart#0" expanded="false" />
-            <element signature="class#10197:10428" expanded="false" />
-            <element signature="method#compare#0;class#10197:10428" expanded="false" />
+            <element signature="class#9632:9863" expanded="false" />
+            <element signature="method#compare#0;class#9632:9863" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -888,7 +886,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/PCMManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
-          <caret line="62" column="71" lean-forward="false" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
+          <caret line="63" column="69" lean-forward="false" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
