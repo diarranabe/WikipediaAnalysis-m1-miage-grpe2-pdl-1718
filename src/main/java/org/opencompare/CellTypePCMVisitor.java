@@ -1,19 +1,14 @@
 package org.opencompare;
 
+import org.opencompare.api.java.*;
+import org.opencompare.api.java.util.PCMVisitor;
+import org.opencompare.api.java.value.*;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.opencompare.api.java.*;
-import org.opencompare.api.java.util.PCMVisitor;
-import org.opencompare.api.java.value.*;
-
-/**
- * 
- * @author Nantenin
- *
- */
 public class CellTypePCMVisitor implements PCMVisitor {
 
 	private Map<String, List<String>> cellsTypes = new HashMap<>();

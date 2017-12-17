@@ -11,19 +11,19 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 public class PCMManagerTest {
+    private List<PCM> list = Tools.conformsPCM(Tools.loadAllPcmFromDirectory("pcms2/"));
 
 	@Test
     public void productsFrequenciesTest() {
-        PCMManager manager = new PCMManager("pcms2/");
-        Map<String, Long> mostFrenquents = Tools.productsFrequencies(Tools.conformsPCM(manager.pcmList));
+        Map<String, Long> mostFrenquents = Tools.productsFrequencies(list);
         Iterator it = mostFrenquents.entrySet().iterator();
-        int occurences = 0;
+        int occurences = 1;
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
             occurences += (long) pair.getValue();
         }
         int nbDeProd = 0;
-        for (PCM p : Tools.conformsPCM(manager.pcmList)) {
+        for (PCM p : list) {
             nbDeProd += p.getProducts().size();
         }
         assertEquals(occurences, nbDeProd);
@@ -32,8 +32,6 @@ public class PCMManagerTest {
 
 	@Test
     public void featuresFrenquenciesTest() {
-        PCMManager manager = new PCMManager("pcms2/");
-        List<PCM> list = manager.pcmList;
         List<PCM> list1 = new ArrayList<>();
         list1.add(list.get(0));
         list1.add(list.get(0));
@@ -54,5 +52,23 @@ public class PCMManagerTest {
         assertEquals(occurences, nbDeProd);
     }
 
+    @Test
+    public void similarityTest() {
+        PCM pcm = list.get(0);
+        assertEquals(100, (int) Tools.pcmSimilarities(pcm, pcm));
+    }
+
+    @Test
+    public void featuresSimilarityTest() {
+        PCM pcm = list.get(0);
+        assertEquals(100, (int) Tools.pcmFeaturesSimilarityRatio(pcm, pcm));
+    }
+
+
+    @Test
+    public void productsSimilarityTest() {
+        PCM pcm = list.get(0);
+        assertEquals(100, (int) Tools.pcmProductsSimilarityRatio(pcm, pcm));
+    }
 
 }

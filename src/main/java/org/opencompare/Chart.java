@@ -6,108 +6,72 @@ import org.knowm.xchart.CategoryChart;
 import org.knowm.xchart.CategoryChartBuilder;
 import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.style.Styler.LegendPosition;
+import org.opencompare.api.java.PCM;
 
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.List;
 import java.util.Map.Entry;
 
 /**
- * Basic Bar Chart
- * <p>
- * Demonstrates the following:
- * <ul>
- * <li>Integer categories as List
- * <li>All positive values
- * <li>Single series
- * <li>Place legend at Inside-NW position
- * <li>Bar Chart Annotations
+ * Chart
+ * Sauvegarder les diagramme au format JPG
  */
 public class Chart implements PCMChart<CategoryChart> {
 
 	public static void main(String[] args)  {
 
-		PCMManager manager = new PCMManager("pcms2/");
-		Map<String, Long> feature = Tools.featuresFrequencies(manager.pcmList);
-		Map<String, Long> products = Tools.productsFrequencies(manager.pcmList);
-		// showChart(feature);
-		showChart(loadCsvData("outputCSV/products.csv"), "", "");
-		showChart(products, "Products", "10 most frequents");
-		Map<String, Long> hf = loadCsvData("outputCSV/features.csv");
-		showChart(hf, "Features", "10 most frequents");
+		List<PCM> mlist = Tools.conformsPCM(Tools.loadAllPcmFromDirectory("pcms2/"));
+		Map<String, Long> feature = Tools.featuresFrequencies(mlist);
+		Map<String, Long> products = Tools.productsFrequencies(mlist);
+		Map<String, Long> products2 = loadCsvData("outputCSV/conformFeaturesDatasetConform.csv");
+		getChart(products2, "Products", "10 most frequents");
 	}
 
-	public CategoryChart getChart() {
-		// Create Chart
-		CategoryChart chart = new CategoryChartBuilder().width(800).height(600).title("Score Histogram")
-				.xAxisTitle("Score").yAxisTitle("Number").build();
+	/**
+	 * Afficher et sauvegarder un diagramme
+	 *
+	 * @param hashMap un map
+	 * @param title   le titre
+	 * @param legend  la legende
+	 */
+	public static void getChart(Map<String, Long> hashMap, String title, String legend) {
+		Date dNow = new Date();
+		SimpleDateFormat ft = new SimpleDateFormat("yyMMddhhmmssMs");
+		String datetime = ft.format(dNow);
 
-		// Customize Chart
-		chart.getStyler().setLegendPosition(LegendPosition.InsideNW);
-		chart.getStyler().setHasAnnotations(true);
-		chart.getStyler().setPlotGridLinesVisible(false);
+		String path = "./charts/";
+		int width = 1200;
+		int height = 600;
+		String avgLabel = "Avg: ";
+		String sdLabel = "Sd:";
+		String label = "All data : ";
+		int toShow = 20;
 
-		 chart.getStyler().setChartBackgroundColor(Color.RED); // background
-		 chart.getStyler().setPlotBackgroundColor(Color.RED); // back of all bars
-		 chart.getStyler().setAxisTickLabelsColor(Color.RED); // x and y labels color
-		 chart.getStyler().setChartFontColor(Color.RED); // labels around
-
-		PCMManager manager = new PCMManager("pcms2/");
-		Map<String, Long> feature = Tools.featuresFrequencies(manager.pcmList);
-		Map<String, Long> products = Tools.productsFrequencies(manager.pcmList);
-		// Series
-		ArrayList<String> keysList = new ArrayList<>();
-		ArrayList<Integer> valuesList = new ArrayList<>();
-
-		int min = 0;
-		int max = 0;
-		if (feature.size() < 10) {
-			max = feature.size();
-		} else {
-			max = feature.size();
-			min = max - 10;
-		}
-		int i = 0;
-		for (Map.Entry<String, Long> entry : feature.entrySet()) {
-			if ((min <= i) && (i <= max)) {
-				String key = "-";
-				if (entry.getKey().length() > 0) {
-					key = entry.getKey();
-				}
-				int value = entry.getValue().intValue();
-				keysList.add(key);
-				valuesList.add(value);
-			}
-			System.out.println("pos: " + i + ", key:" + entry.getKey() + ", val:" + entry.getValue());
-			i++;
-		}
-		chart.addSeries("My chart", keysList, valuesList);
-		return chart;
-	}
-
-	public static void showChart(Map<String, Long> hashMap, String title, String legend)  {
-		CategoryChart chart = new CategoryChartBuilder().width(800).height(600).title(title + " occurences Histogram")
+		CategoryChart chart = new CategoryChartBuilder().width(width).height(height).title(title)
 				.xAxisTitle(legend).yAxisTitle("Values").build();
-		// Customize Chart
+
 		chart.getStyler().setLegendPosition(LegendPosition.InsideNW);
 		chart.getStyler().setHasAnnotations(true);
-		// chart.getStyler().setPlotGridLinesVisible(false);
+
 		// Series
 		ArrayList<String> keysList = new ArrayList<>();
 		ArrayList<Integer> allValuesList = new ArrayList<>();
 		ArrayList<Integer> valuesList = new ArrayList<>();
 
+		if (hashMap.size() < toShow) {
+			toShow = hashMap.size();
+		}
 		int min = 0;
 		int max = 0;
-		if (hashMap.size() < 10) {
+		if (hashMap.size() < toShow) {
 			max = hashMap.size();
 		} else {
 			max = hashMap.size();
-			min = max - 10;
+			min = max - toShow;
 		}
 		int i = 0;
 		for (Map.Entry<String, Long> entry : hashMap.entrySet()) {
@@ -123,16 +87,216 @@ public class Chart implements PCMChart<CategoryChart> {
 			allValuesList.add(entry.getValue().intValue());
 			i++;
 		}
+
 		chart.addSeries(
-				"All data ==> Avg: " + (int) getAverage(allValuesList) + ", Sd:" + Math.sqrt(getAverage(allValuesList)),
+				label + hashMap.size() + " | " + avgLabel + (int) getAverage(allValuesList) + " | " + sdLabel + Math.sqrt(getAverage(allValuesList)),
 				keysList, valuesList);
 		new SwingWrapper<CategoryChart>(chart).displayChart();
 		try {
-			BitmapEncoder.saveBitmap(chart, "./charts/"+title, BitmapFormat.JPG);
+			BitmapEncoder.saveBitmap(chart, path + title + datetime, BitmapFormat.JPG);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * Afficher et sauvegarder un diagramme
+	 *
+	 * @param hashMap un map
+	 * @param toShow  nombre de données à afficher
+	 * @param title   le titre
+	 * @param legend  la legende
+	 * @param width   la largeur de l'image en pixel
+	 * @param height  la hauteur de l'image en pixel
+	 * @param path    le chemin de sauvegarde
+	 */
+	public static void getChart(Map<String, Long> hashMap, int toShow, String title, String legend, int width, int height, String path) {
+		Date dNow = new Date();
+		SimpleDateFormat ft = new SimpleDateFormat("yyMMddhhmmssMs");
+		String datetime = ft.format(dNow);
+
+		String avgLabel = "Avg: ";
+		String sdLabel = "Sd:";
+		String label = "All data : ";
+
+		CategoryChart chart = new CategoryChartBuilder().width(width).height(height).title(title)
+				.xAxisTitle(legend).yAxisTitle("Values").build();
+
+		chart.getStyler().setLegendPosition(LegendPosition.InsideNW);
+		chart.getStyler().setHasAnnotations(true);
+
+		// Series
+		ArrayList<String> keysList = new ArrayList<>();
+		ArrayList<Integer> allValuesList = new ArrayList<>();
+		ArrayList<Integer> valuesList = new ArrayList<>();
+
+		if (hashMap.size()<toShow) {
+			toShow = hashMap.size();
+		}
+		int min = 0;
+		int max = 0;
+		if (hashMap.size() < toShow) {
+			max = hashMap.size();
+		} else {
+			max = hashMap.size();
+			min = max - toShow;
+		}
+		int i = 0;
+		for (Map.Entry<String, Long> entry : hashMap.entrySet()) {
+			if ((min <= i) && (i <= max)) {
+				String key = "-";
+				if (entry.getKey().length() > 0) {
+					key = entry.getKey();
+				}
+				int value = entry.getValue().intValue();
+				keysList.add(key);
+				valuesList.add(value);
+			}
+			allValuesList.add(entry.getValue().intValue());
+			i++;
+		}
+
+		chart.addSeries(
+				label + hashMap.size() + " | " + avgLabel + (int) getAverage(allValuesList) +" | "+ sdLabel + Math.sqrt(getAverage(allValuesList)),
+				keysList, valuesList);
+		new SwingWrapper<CategoryChart>(chart).displayChart();
+		try {
+			BitmapEncoder.saveBitmap(chart, path+title+datetime, BitmapFormat.JPG);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Afficher et sauvegarder un diagramme
+	 *
+	 * @param hashMap un map
+	 * @param toShow  nombre de données à afficher
+	 * @param title   le titre
+	 * @param legend  la legende
+	 * @param width   la largeur de l'image en pixel
+	 * @param height  la hauteur de l'image en pixel
+	 * @param path    le chemin de sauvegarde
+	 * @param show    afficher l'image après la sauvegarde ou non
+	 */
+	public static void getChart(Map<String, Long> hashMap, int toShow, String title, String legend, int width, int height, String path, boolean show) {
+		Date dNow = new Date();
+		SimpleDateFormat ft = new SimpleDateFormat("yyMMddhhmmssMs");
+		String datetime = ft.format(dNow);
+
+		String avgLabel = "Avg: ";
+		String sdLabel = "Sd:";
+		String label = "All data : ";
+
+		CategoryChart chart = new CategoryChartBuilder().width(width).height(height).title(title)
+				.xAxisTitle(legend).yAxisTitle("Values").build();
+
+		chart.getStyler().setLegendPosition(LegendPosition.InsideNW);
+		chart.getStyler().setHasAnnotations(true);
+
+		// Series
+		ArrayList<String> keysList = new ArrayList<>();
+		ArrayList<Integer> allValuesList = new ArrayList<>();
+		ArrayList<Integer> valuesList = new ArrayList<>();
+
+		if (hashMap.size() < toShow) {
+			toShow = hashMap.size();
+		}
+		int min = 0;
+		int max = 0;
+		if (hashMap.size() < toShow) {
+			max = hashMap.size();
+		} else {
+			max = hashMap.size();
+			min = max - toShow;
+		}
+		int i = 0;
+		for (Map.Entry<String, Long> entry : hashMap.entrySet()) {
+			if ((min <= i) && (i <= max)) {
+				String key = "-";
+				if (entry.getKey().length() > 0) {
+					key = entry.getKey();
+				}
+				int value = entry.getValue().intValue();
+				keysList.add(key);
+				valuesList.add(value);
+			}
+			allValuesList.add(entry.getValue().intValue());
+			i++;
+		}
+
+		chart.addSeries(
+				label + hashMap.size() + " | " + avgLabel + (int) getAverage(allValuesList) + " | " + sdLabel + Math.sqrt(getAverage(allValuesList)),
+				keysList, valuesList);
+		if (show) {
+			new SwingWrapper<CategoryChart>(chart).displayChart();
+		}
+		try {
+			BitmapEncoder.saveBitmap(chart, path + title + datetime, BitmapFormat.JPG);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static Map<String, Long> loadCsvData(String path) {
+		HashMap<String, Long> data = new HashMap<String, Long>();
+		HashMap<String, Integer> keyMap = new HashMap<String, Integer>();
+		FileReader file = null;
+		BufferedReader buffer = null;
+
+		try {
+			file = new FileReader(new File(path));
+			buffer = new BufferedReader(file);
+			String line = "";
+			int i = 0;
+			while ((line = buffer.readLine()) != null) {
+				if (i != 0) {
+					String key;
+					Integer myVal;
+					line = line.replaceAll("([^,;a-zA-Z0-9])", "");
+					line = line.replaceAll("\\s*[\\r\\n]+\\s*", "").trim();
+					System.err.println(i + ": " + line);
+					int lastComma = line.lastIndexOf(',');
+					System.err.println(": last c " + lastComma);
+					if (lastComma == -1) {
+						lastComma = line.lastIndexOf(';');
+						System.err.println(": last c " + lastComma);
+					}
+					try {
+						myVal = Integer.parseInt(line.substring(lastComma + 1));
+					} catch (NumberFormatException e) {
+						myVal = 1;
+						System.err.println(e.getMessage());
+					}
+					if (lastComma == 0) {
+						key = "-";
+					} else {
+						key = line.substring(0, lastComma - 1);
+					}
+					long v = Long.parseLong("" + myVal);
+					if (key.length() > 10) {
+						key = key.substring(0, 5) + "...";
+					}
+					if (data.containsKey(key)) {
+						if (keyMap.containsKey(key)) {
+							keyMap.put(key, keyMap.get(key) + 1);
+						} else {
+							keyMap.put(key, 2);
+						}
+						key += keyMap.get(key);
+					}
+					System.out.println("set : " + key + ", " + v);
+					data.put(key, Long.parseLong("" + v));
+				}
+				i++;
+			}
+		} catch (NumberFormatException | IOException e) {
+			e.printStackTrace();
+		}
+		data = (HashMap<String, Long>) sortByValue(data);
+		return (HashMap<String, Long>) data;
+	}
+
 
 	private static double getAverage(ArrayList<Integer> marks) {
 		Integer sum = 0;
@@ -153,40 +317,8 @@ public class Chart implements PCMChart<CategoryChart> {
 		return temp / (marks.size() - 1);
 	}
 
-	public static Map<String, Long> loadCsvData(String path) {
-		HashMap<String, Long> data = new HashMap<String, Long>();
-		FileReader file = null;
-		BufferedReader buffer = null;
-
-		try {
-			file = new FileReader(new File(path));
-			buffer = new BufferedReader(file);
-			String line = "";
-			while ((line = buffer.readLine()) != null) {
-				String key;
-				Integer myVal;
-				line = line.replaceAll("([^,a-zA-Z0-9])", "");
-				line = line.replaceAll("\\s*[\\r\\n]+\\s*", "").trim();
-				int lastComma = line.lastIndexOf(',');
-				try {
-					myVal = Integer.parseInt(line.substring(lastComma + 1));
-				} catch (NumberFormatException e) {
-					myVal = 1;
-					// System.err.println(e.getMessage());
-				}
-				if (lastComma == 0) {
-					key = "-";
-				} else {
-					key = line.substring(0, lastComma - 1);
-				}
-				long v = Long.parseLong("" + myVal);
-				data.put(key, Long.parseLong("" + v));
-			}
-		} catch (NumberFormatException | IOException e) {
-			e.printStackTrace();
-		}
-		data = (HashMap<String, Long>) sortByValue(data);
-		return (HashMap<String, Long>) data;
+	public CategoryChart getChart() {
+		return null;
 	}
 
 	private static <K, V> Map<K, V> sortByValue(Map<K, V> map) {

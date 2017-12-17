@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static org.opencompare.Tools.formatcsv;
+import static org.opencompare.Tools.format;
 
 public class CsvTools {
     public static void productsConformRatioToCsv(List<PCM> pcmList, String fileNamecsv) {
@@ -21,7 +21,7 @@ public class CsvTools {
         products.add("Matrice;prodConformRatio");
         for (PCM pcm : pcmList) {
             int ratio = Tools.pcmProductsConformRatio(pcm);
-            products.add(formatcsv(pcm.getName()) + ";" + ratio);
+            products.add(format(pcm.getName()) + ";" + ratio);
         }
         try {
             Files.write(Paths.get(fileNamecsv), products, Charset.defaultCharset());
@@ -35,7 +35,7 @@ public class CsvTools {
         products.add("Matrice;featConformRatio");
         for (PCM pcm : pcmList) {
             int ratio = Tools.pcmFeaturesConformRatio(pcm);
-            products.add(formatcsv(pcm.getName()) + ";" + ratio);
+            products.add(format(pcm.getName()) + ";" + ratio);
             System.out.println("ratio " + ratio);
         }
         try {
@@ -76,7 +76,7 @@ public class CsvTools {
         try {
             List<String> outputlist = new ArrayList<>();
             for (Map.Entry<String, Long> entry : map.entrySet()) {
-                outputlist.add("\r\n" + formatcsv(entry.getKey()) + "," + entry.getValue());
+                outputlist.add("\r\n" + format(entry.getKey()) + "," + entry.getValue());
             }
             PrintWriter pw = new PrintWriter(new File(fileOutputNamecsv));
             StringBuilder sb = new StringBuilder(header1 + "," + header2);

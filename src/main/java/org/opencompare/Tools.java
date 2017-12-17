@@ -6,7 +6,9 @@ import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.PCMLoader;
 import org.opencompare.api.java.util.Pair;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileFilter;
+import java.io.IOException;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
@@ -25,63 +27,15 @@ public class Tools {
      */
     public static int PCM_SIMILLARITY_RATIO = 100; // Default
 
-    /**
-     * Get PCM matrix size
-     *
-     * @param pcm
-     * @return
-     */
-    public static Integer getMatrixSize(PCM pcm) {
-        return pcm.getProducts().size() * pcm.getFeatures().size();
-    }
 
-    public static Map<String, Integer> mapDesCellules(PCM pcm) {
-
-        Map<String, Integer> map = new HashMap<>();
-
-        List<Product> listProduit = pcm.getProducts();
-
-        for (Product p : listProduit) {
-
-            List<Cell> listCell = p.getCells();
-            for (Cell c : listCell) {
-
-                map.put(c.getContent(), 1);
-            }
-
-        }
-        return map;
-    }
-
-    /**
-     * Affiche un pcm en console
-     *
-     * @param pcm
-     */
-    public static void printMatrix(PCM pcm) {
-
-        Map<String, Integer> map = new HashMap<>();
-
-        System.out.println(pcm.getFeatures());
-        List<Product> listProduit = pcm.getProducts();
-
-        for (Product p : listProduit) {
-
-            List<Cell> cells = p.getCells();
-            for (Cell cell : cells) {
-                System.out.print(cell.getContent().toString() + ",");
-            }
-            System.out.println();
-        }
-    }
 
     /**
      * Prends un pcm en param�tre et retourne un Map de ses cellules
      *
-     * @param pcm
-     * @return
+     * @param pcm pcm
+     * @return map de cellules et occurrences
      */
-    public static Map<String, Long> celluleFrequences(PCM pcm) {
+    public static Map<String, Long> cellsFrequencies(PCM pcm) {
 
         List<String> listeRet = new ArrayList();
 
@@ -95,25 +49,41 @@ public class Tools {
                 listeRet.add(cell.getContent());
             }
         }
-
         Map<String, Long> counts = listeRet.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting()));
-
         return counts;
     }
 
     /**
-     * Prends un pcm en param�tre et retourne la liste de ses feature
+     * Prends un pcm en param�tre et retourne un Map de ses cellules
      *
-     * @param p pcm
-     * @return List<String>
+     * @param pcmList liste de pcm
+     * @return map de cellules et occurrences
      */
-    public static List<String> getFeatures(PCM p) {
-        List<String> result = new ArrayList<>();
-        List<AbstractFeature> listF = p.getFeatures();
-        for (AbstractFeature f : listF) {
-            result.add(f.getName());
+    public static Map<String, Long> cellsFrequencies(List<PCM> pcmList) {
+        Map<String, Long> map = new HashMap<>();
+
+        for (PCM pcm : pcmList) {
+            map = appendMap(map, cellsFrequencies(pcm));
         }
-        return result;
+        return sortByValue(map);
+    }
+
+    /**
+     * <Fusionne 2 map
+     *
+     * @param map1 map1
+     * @param map2 map2
+     * @return map
+     */
+    public static Map<String, Long> appendMap(Map<String, Long> map1, Map<String, Long> map2) {
+        for (Map.Entry<String, Long> entry : map2.entrySet()) {
+            if (map1.containsKey(entry.getKey())) {
+                map1.put(entry.getKey(), map1.get(entry.getKey()) + entry.getValue());
+            } else {
+                map1.put(entry.getKey(), entry.getValue());
+            }
+        }
+        return map1;
     }
 
     /**
@@ -122,7 +92,7 @@ public class Tools {
      * @param pcmList
      * @return Map<String, Long>
      */
-    public static List<String> allFeatures(List<PCM> pcmList) {
+    public static List<String> pcmListFeatures(List<PCM> pcmList) {
 
         List<String> listFeatures = new ArrayList<>();
         for (PCM pcm : pcmList) {
@@ -140,7 +110,7 @@ public class Tools {
      * @param pcmList
      * @return Map<String, Long>
      */
-    public static List<String> allProducts(List<PCM> pcmList) {
+    public static List<String> pcmListProducts(List<PCM> pcmList) {
 
         List<String> listProducts = new ArrayList<>();
         for (PCM pcm : pcmList) {
@@ -153,7 +123,7 @@ public class Tools {
     }
 
     /**
-     * Homogénéité d'un pcm
+     * Homogénéité des colonnes d'un pcm
      *
      * @param pcm le pcm
      * @return List<String>  une liste de Matrice;Feature;TypePredominant;taux pour chaque feature
@@ -170,29 +140,32 @@ public class Tools {
             if (!StringUtils.isBlank(f.getName())) {
                 Pair<String, Double> value = homogeneiteColumn(resultVisit.get(f.getName()));
                 String name = f.getName();
-                if (name.length() > 50) {// TODO - ???
+                if (name.length() > 50) {
                     name = name.substring(0, 50);
                 }
-                result.add(String.format("%s;%s;%s;%s", formatcsv(pcm.getName()), formatcsv(name), formatcsv(value._1), value._2));
+                result.add(String.format("%s;%s;%s;%s", format(pcm.getName()), format(name), format(value._1), value._2));
             }
         }
         return result;
     }
 
+    /**
+     * Retire les caractères non désirés d'un String pour être stocké en csv
+     * @param value le string
+     * @return un string
+     */
     public static String format(String value) {
-        if (value != null) {
-            value = value.replaceAll("([^ ()éôèçà_,a-zA-Z0-9'])", " ");
-        }
-        return value;
-    }
-
-    public static String formatcsv(String value) {
         if (value != null) {
             value = value.replaceAll("([^ ()éôèçà_a-zA-Z0-9'])", " ");
         }
         return value;
     }
 
+    /**
+     * Homogénéité d'une colonne
+     * @param listType les differents types
+     * @return le type récurrent et sa fréquence
+     */
     private static Pair<String, Double> homogeneiteColumn(List<String> listType) {
         if (listType == null) {
             return new Pair<String, Double>("NA", 1.0);
@@ -206,10 +179,10 @@ public class Tools {
     }
 
     /**
-     * Prends une liste de PCM et retourne les features et leurs occurences
+     * Occurences des features
      *
-     * @param pcmList
-     * @return Map<String, Long>
+     * @param pcmList liste de pcm
+     * @return Map des features et leurs occurences
      */
 
     public static Map<String, Long> featuresFrequencies(List<PCM> pcmList) {
@@ -228,10 +201,10 @@ public class Tools {
     }
 
     /**
-     * Prends une liste de PCM et retourne les products et leurs occurences
+     * Occurences des products
      *
-     * @param pcmList
-     * @return
+     * @param pcmList liste de pcm
+     * @return Map des products et leurs occurences
      */
     public static Map<String, Long> productsFrequencies(List<PCM> pcmList) {
         List<String> listProduit = new ArrayList<>();
@@ -260,53 +233,11 @@ public class Tools {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
     }
 
-
     /**
-     * Trouve les products/features qui ont des noms ilisibles(cahs speciaux...) �
-     * partir de donn�es csv
-     *
-     * @param path
-     * @return
-     */
-    public static Map<String, Long> itemsNamesCheck(String path) {
-        Map<String, Long> data = new HashMap<String, Long>();
-        FileReader file = null;
-        BufferedReader buffer = null;
-        int names = 0;
-        int noNames = 0;
-
-        try {
-            file = new FileReader(new File(path));
-            buffer = new BufferedReader(file);
-            String line = "";
-            while ((line = buffer.readLine()) != null) {
-                String key;
-                Integer myVal;
-                line = formatcsv(line);
-                int lastComma = line.lastIndexOf(',');
-                try {
-                    myVal = Integer.parseInt(line.substring(lastComma + 1));
-                } catch (NumberFormatException e) {
-                    myVal = 1;
-                }
-                if (lastComma == 0) {
-                    noNames++;
-                } else {
-                    names++;
-                }
-            }
-        } catch (NumberFormatException | IOException e) {
-            e.printStackTrace();
-        }
-        data.put("names", Long.valueOf("" + names));
-        data.put("noNames", Long.valueOf(noNames));
-        return data;
-    }
-
-    /**
-     * Charger les ses fichiers .pcm  d'un répertoire et les retournes tous en objet PCM
+     *  Charger les fichiers .pcm  d'un répertoire et les retournes tous en objet PCM
      *
      * @param path le chemin du répertoire
+     * @return liste de pcm ou null
      */
     public static List<PCM> loadAllPcmFromDirectory(String path) {
         if (path == null) return null;
@@ -336,7 +267,7 @@ public class Tools {
      * Converti un fichier .pcm déja chargé en objet PCM
      *
      * @param file le fichier
-     * @return PCM
+     * @return PCM ou null
      */
 
     public static PCM loadPcmFromFile(File file) {
@@ -346,7 +277,6 @@ public class Tools {
         try {
             pcmContainers = loader.load(file);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         PCM pcm = pcmContainers.get(0).getPcm();
@@ -445,7 +375,7 @@ public class Tools {
     }
 
     /**
-     * Verifie si un pcm est bon
+     * Verifie si un pcm est conforme
      *
      * @param pcm le pcm
      * @return true en cas de succès
@@ -458,7 +388,7 @@ public class Tools {
      * Retourne la liste de pcm conformes d'une liste
      *
      * @param allPcm liste de pcm
-     * @return liste de bon pcm
+     * @return liste de pcm conformes
      */
     public static List<PCM> conformsPCM(List<PCM> allPcm) {
         List<PCM> conformPcms = new ArrayList<>();
@@ -472,7 +402,7 @@ public class Tools {
 
 
     /**
-     * Ratio de simillarité des features de deux pcm
+     * Ratio de similarité des features de deux pcm
      *
      * @param pcm1 pcm 1
      * @param pcm2 pcm2
@@ -487,7 +417,6 @@ public class Tools {
             for (AbstractFeature f1 : features1) {
                 for (AbstractFeature f2 : features2) {
                     if (f1.getName().equals(f2.getName())) {
-//                        System.out.println(f1.getName()+" ,,, "+f2.getName());
                         ratiof++;
                     }
                 }
@@ -507,7 +436,7 @@ public class Tools {
     }
 
     /**
-     * Ratio de simillarité des features de deux pcm
+     * Ratio de similarité des features de deux pcm
      *
      * @param pcm1 pcm 1
      * @param pcm2 pcm 2
@@ -542,7 +471,7 @@ public class Tools {
     }
 
     /**
-     * Simillarité entre deux pcm
+     * similarité entre deux pcm
      *
      * @param pcm1 pcm1
      * @param pcm2 pcm2
@@ -576,7 +505,7 @@ public class Tools {
      * Les similaritées entre tous les pcm
      *
      * @param pcmList liste de pcm
-     * @return map nom de pcm,nombre de pcm simmilaire
+     * @return map nom de pcm,nombre de pcm simmilaires
      */
     public static Map<String, Long> pcmSimilarities(List<PCM> pcmList) {
         Map<String, Long> map = new HashMap<String, Long>();

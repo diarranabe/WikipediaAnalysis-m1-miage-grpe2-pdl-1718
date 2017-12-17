@@ -2,52 +2,69 @@ package org.opencompare;
 
 import org.opencompare.api.java.PCM;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
+
+import static org.opencompare.Chart.getChart;
+import static org.opencompare.Chart.loadCsvData;
 
 /**
  * @author diarranabe
  */
 public class PCMManager {
 
-
-    /**
-     * Listes des objets java PCM chargés
-     * Permet d'avoir tous les pcm du dataset
-     */
-    public List<PCM> pcmList = new ArrayList<>();
-
-    public PCMManager(String path) {
-        this.pcmList = Tools.loadAllPcmFromDirectory(path);
-    }
-
     /**
      * @param args
      */
     public static void main(String[] args) {
         System.out.println("start");
-        // TODO Auto-generated method stub
-        PCMManager manager = new PCMManager("pcms2/");
-        Map<String, Long> features = Tools.featuresFrequencies(manager.pcmList);
-        Map<String, Long> products = Tools.productsFrequencies(manager.pcmList);
-        List<PCM> pcmList = (manager.pcmList);
-        Iterator it = features.entrySet().iterator();
 
-//        Chart.showChart(products, "Products", ""); // Affiche les occurr des products
-//        Chart.showChart(features, "Features", "");// Affiche les occurr des features
+        List<PCM> mlist = Tools.loadAllPcmFromDirectory("pcms/");
 
-//        System.out.println("ratio de feat p1 & 2 est "+ Tools.pcmFeaturesSimilarityRatio(pcmList.get(1), pcmList.get(1)));
-//        System.out.println("ratio de prod p1 & 2 est "+ Tools.pcmProductsSimilarityRatio(pcmList.get(0), pcmList.get(1)));
-        System.out.println("rati de sim p1 & 2 est " + Tools.pcmSimilarities(pcmList.get(0), pcmList.get(0)));
-//        System.out.println("nb de sim de p1 est "+ Tools.pcmSimillarityList(pcmList.get(2), pcmList));
-        System.out.println("sim de tous est " + Tools.pcmSimilarities(pcmList).values());
-        int i = 0;
-        for (Map.Entry<String, Long> entry : Tools.pcmSimilarities(pcmList).entrySet()) {
-            System.out.println(i++ + "pcm : " + entry.getKey() + ", value: " + entry.getValue());
-        }
+        /*CsvTools.convertMapToCsv(Tools.featuresFrequencies(mlist), "outPutCSV/featuresFrenquenciesDataset.csv", "Feature", "Occurrences");
+        CsvTools.convertMapToCsv(Tools.featuresFrequencies(Tools.conformsPCM(mlist)), "outPutCSV/featuresFrenquenciesDatasetConform.csv", "Feature", "Occurrences");
 
+        CsvTools.convertMapToCsv(Tools.productsFrequencies(mlist), "outPutCSV/productsFrenquenciesDataset.csv", "Product", "Occurrences");
+        CsvTools.convertMapToCsv(Tools.productsFrequencies(Tools.conformsPCM(mlist)), "outPutCSV/productsFrenquenciesDatasetConform.csv", "Product", "Occurrences");
+
+        CsvTools.productsConformRatioToCsv(mlist, "outPutCSV/conformProductsDataset.csv");
+        CsvTools.productsConformRatioToCsv(Tools.conformsPCM(mlist), "outPutCSV/conformProductsDatasetConform.csv");
+
+        CsvTools.featuresConformRatioToCsv(mlist, "outPutCSV/conformFeaturesDataset.csv");
+        CsvTools.featuresConformRatioToCsv(Tools.conformsPCM(mlist), "outPutCSV/conformFeaturesDatasetConform.csv");
+
+        CsvTools.pcmHomogeneityToCsv(mlist.get(1), "outPutCSV/homogeneite1.csv");
+*/
+//        CsvTools.convertMapToCsv(Tools.pcmSimilarities(Tools.conformsPCM(mlist)), "outPutCSV/similaritiesDatasetConforms.csv", "PCM", "NbMaticesSimilaires");
+
+
+// Ne passe pas avec tout le dataset
+//        CsvTools.pcmHomogeneityToCsv(Tools.conformsPCM(mlist), "outPutCSV/homogeneiteDatasetConform.csv");
+
+//        CsvTools.convertMapToCsv(Tools.pcmSimilarities(mlist), "outPutCSV/similaritiesDataset.csv", "PCM", "NbMaticesSimilaires");
+
+
+//        CsvTools.pcmHomogeneityToCsv(mlist, "outPutCSV/homogeneiteDataset.csv");
+
+//        CsvTools.pcmHomogeneityToCsv(mlist.get(1), "outPutCSV/homogeneite1b.csv");
+
+       /* getChart(loadCsvData("outputCSV/conformFeaturesDataset.csv"),2000,"Conformité des features","",1300,900,"./charts/");
+        getChart(loadCsvData("outputCSV/conformFeaturesDatasetConform.csv"),2000,"Conformité des features des matrices conformes","",1300,900,"./charts/");
+
+        getChart(loadCsvData("outputCSV/conformProductsDataset.csv"),2000,"Conformité des products","",1300,900,"./charts/");
+        getChart(loadCsvData("outputCSV/conformProductsDatasetConform.csv"),2000,"Conformité des products des matrices conformes","",1300,900,"./charts/");
+
+        getChart(loadCsvData("outputCSV/featuresFrenquenciesDataset.csv"),20,"Occurrences des features","Les 20 plus élevées",1300,900,"./charts/");
+        getChart(loadCsvData("outputCSV/featuresFrenquenciesDatasetConform.csv"),20,"Occurrences des products","Les 20 plus élevées",1300,900,"./charts/");
+
+        getChart(loadCsvData("outputCSV/productsFrenquenciesDatasetConform.csv"),20,"Occurrences des products des matrices conformes","Les 20 plus élevées",1300,900,"./charts/");
+        getChart(loadCsvData("outputCSV/productsFrenquenciesDataset.csv"),20,"Occurrences des products","Les 20 plus élevées",1300,900,"./charts/");
+
+        getChart(loadCsvData("outputCSV/similaritiesDataset.csv"),20,"Similarités entre matrices","Les 20 plus élevées",1300,900,"./charts/");
+      */
+        getChart(loadCsvData("outputCSV/similaritiesDatasetConforms.csv"), 20, "Similarités entre matrices conformes", "Les 20 plus élevées", 1300, 900, "./charts/");
+
+
+//        getChart(loadCsvData("outputCSV/featuresFrenquenciesDataset.csv"), "Products", "10 most frequents");
         System.out.println("end");
     }
 }
