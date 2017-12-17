@@ -5,9 +5,6 @@ import org.opencompare.api.java.*;
 import org.opencompare.api.java.impl.io.KMFJSONLoader;
 import org.opencompare.api.java.io.PCMLoader;
 import org.opencompare.api.java.util.Pair;
-import org.supercsv.io.CsvListWriter;
-import org.supercsv.io.ICsvListWriter;
-import org.supercsv.prefs.CsvPreference;
 
 import java.io.*;
 import java.util.*;
@@ -21,13 +18,12 @@ public class Tools {
      * Le taux d'element correcte doit être >= à ce ratio
      * pour qu'un pcm soit considéré comme apte à être analyser
      */
-    public static int PCM_CONFORM_RATIO = 80; // Default
+    public static int PCM_CONFORM_RATIO = 100; // Default
 
     /**
      * Le ratio pour affirmer deux pcm sont simillaires
      */
     public static int PCM_SIMILLARITY_RATIO = 100; // Default
-
 
     /**
      * Get PCM matrix size
@@ -177,15 +173,22 @@ public class Tools {
                 if (name.length() > 50) {// TODO - ???
                     name = name.substring(0, 50);
                 }
-                result.add(String.format("%s;%s;%s;%s", format(pcm.getName()), format(name), value._1, value._2));
+                result.add(String.format("%s;%s;%s;%s", formatcsv(pcm.getName()), formatcsv(name), formatcsv(value._1), value._2));
             }
         }
         return result;
     }
 
-    private static String format(String value) {
+    public static String format(String value) {
         if (value != null) {
-            value = value.replaceAll("\\s+", " ");
+            value = value.replaceAll("([^ ()éôèçà_,a-zA-Z0-9'])", " ");
+        }
+        return value;
+    }
+
+    public static String formatcsv(String value) {
+        if (value != null) {
+            value = value.replaceAll("([^ ()éôèçà_a-zA-Z0-9'])", " ");
         }
         return value;
     }
@@ -245,26 +248,6 @@ public class Tools {
         return sortByValue(occurrences);
     }
 
-    /**
-     * Affiches les differentes tailles des pcm
-     */
-    public static String printSizes(List<PCM> pcmList) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("\"sep=,\"\n");
-        sb.append("namePCM,nbLigne,nbColone,tailleMatrice\n");
-        for (PCM p : pcmList) {
-            String line = "\"" + p.getName() + "\"" + "," + p.getProducts().size() + "," + p.getFeatures().size() + ","
-                    + p.getProducts().size() * p.getFeatures().size();
-            sb.append(line).append("\n");
-        }
-
-        try {
-            convertStringToFile(sb.toString(), "matrixSize.csv");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return sb.toString();
-    }
 
     /**
      * Trie un Map dans l'aodre croissant des valeurs
@@ -277,36 +260,6 @@ public class Tools {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
     }
 
-    /**
-     * Converti une map en fichier csv
-     *
-     * @param map            la map
-     * @param fileOutputName nom du fichier de sortie
-     * @throws Exception exception
-     */
-    public static void convertMapToCsv(Map<String, Long> map, String fileOutputName) throws Exception {
-
-        StringWriter output = new StringWriter();
-        try (ICsvListWriter listWriter = new CsvListWriter(output, CsvPreference.STANDARD_PREFERENCE)) {
-            for (Map.Entry<String, Long> entry : map.entrySet()) {
-                listWriter.write(entry.getKey().replaceAll("\\s*[\\r\\n]+\\s*", "").trim(), entry.getValue());
-            }
-        }
-
-        System.out.println("[DEBUG] strin to csv : \n" + output.toString());
-        PrintWriter out = new PrintWriter("outputCSV/" + fileOutputName);
-        // out.write("sep=,");
-        // out.write("\n");
-        out.write(output.toString());
-        out.close();
-
-    }
-
-    public static void convertStringToFile(String content, String fileName) throws FileNotFoundException {
-        PrintWriter out = new PrintWriter("outputCSV/" + fileName);
-        out.write(content);
-        out.close();
-    }
 
     /**
      * Trouve les products/features qui ont des noms ilisibles(cahs speciaux...) �
@@ -329,14 +282,12 @@ public class Tools {
             while ((line = buffer.readLine()) != null) {
                 String key;
                 Integer myVal;
-                line = line.replaceAll("([^,a-zA-Z0-9])", "");
-                line = line.replaceAll("\\s*[\\r\\n]+\\s*", "").trim();
+                line = formatcsv(line);
                 int lastComma = line.lastIndexOf(',');
                 try {
                     myVal = Integer.parseInt(line.substring(lastComma + 1));
                 } catch (NumberFormatException e) {
                     myVal = 1;
-                    // System.err.println(e.getMessage());
                 }
                 if (lastComma == 0) {
                     noNames++;
@@ -358,6 +309,7 @@ public class Tools {
      * @param path le chemin du répertoire
      */
     public static List<PCM> loadAllPcmFromDirectory(String path) {
+        if (path == null) return null;
         List<File> pcmFiles = new ArrayList<File>();
         List<PCM> pcmList = new ArrayList<PCM>();
         File file = new File(path);
@@ -388,6 +340,7 @@ public class Tools {
      */
 
     public static PCM loadPcmFromFile(File file) {
+        if (file == null) return null;
         PCMLoader loader = new KMFJSONLoader();
         List<PCMContainer> pcmContainers = null;
         try {
@@ -405,8 +358,8 @@ public class Tools {
      *
      * @param pcmList liste de pcm
      */
-    public static void printPcms(List<PCM> pcmList) {
-        int i = 0;
+    public static void printPcmsList(List<PCM> pcmList) {
+        int i = 1;
         for (PCM p : pcmList) {
             System.out.println(i + " : " + p);
             i++;
@@ -427,7 +380,6 @@ public class Tools {
         return pcmList;
     }
 
-
     /**
      * Rétourne le ratio de conformité des features d'un pcm
      *
@@ -435,9 +387,10 @@ public class Tools {
      * @return int le ration
      */
     public static int pcmFeaturesConformRatio(PCM pcm) {
+        if (pcm == null) return 0;
         int ratio = 0;
         List<AbstractFeature> features = pcm.getFeatures();
-        if (features.size() == 0) return 100;
+        if (features.size() == 0) return 0;
         for (AbstractFeature f : features) {
             if (featureNameConform(f.getName())) {
                 ratio++;
@@ -453,19 +406,17 @@ public class Tools {
      * @return int le ration
      */
     public static int pcmProductsConformRatio(PCM pcm) {
+        if (pcm == null) return 0;
         int ratio = 0;
         List<Product> products = pcm.getProducts();
-        if (products.size() == 0) return 100;
         for (Product p : products) {
             if (productNameConform(p.getKeyContent())) {
-                System.out.println("good product : " + p.getKeyContent() + ", ratio:" + ratio);
                 ratio++;
             } else {
-                System.err.println("bad product : " + p.getKeyContent() + ", ratio:" + ratio);
+
             }
         }
         int r = (int) (((float) ratio / (float) products.size()) * 100);
-        System.err.println("Ratio : " + ratio + ", " + products.size() + ", :" + r);
         return r;
     }
 
@@ -476,7 +427,8 @@ public class Tools {
      * @return true en cas de succès
      */
     public static boolean featureNameConform(String feature) {
-        String str = feature.replaceAll("([^ ()éèçà_,a-zA-Z0-9'])", "");
+        if (feature == null) return false;
+        String str = format(feature);
         return str.equals(feature);
     }
 
@@ -487,26 +439,31 @@ public class Tools {
      * @return true en cas de succès
      */
     public static boolean productNameConform(String product) {
-        String str = product.replaceAll("([^ ()éèçà_,a-zA-Z0-9'])", "");
+        if (product == null) return false;
+        String str = format(product);
         return str.equals(product);
     }
+
     /**
      * Verifie si un pcm est bon
+     *
      * @param pcm le pcm
      * @return true en cas de succès
      */
     public static boolean conformPCM(PCM pcm) {
-        return pcmProductsConformRatio(pcm)>=PCM_CONFORM_RATIO && pcmFeaturesConformRatio(pcm)>=PCM_CONFORM_RATIO;
+        return (pcmProductsConformRatio(pcm) >= PCM_CONFORM_RATIO) && (pcmFeaturesConformRatio(pcm) >= PCM_CONFORM_RATIO);
     }
+
     /**
-     * Retourne les bon pcm d'une liste
+     * Retourne la liste de pcm conformes d'une liste
+     *
      * @param allPcm liste de pcm
      * @return liste de bon pcm
      */
-    public static List<PCM> conformsPCM(List<PCM> allPcm){
+    public static List<PCM> conformsPCM(List<PCM> allPcm) {
         List<PCM> conformPcms = new ArrayList<>();
-        for(PCM pcm : allPcm) {
-            if(conformPCM(pcm)) {
+        for (PCM pcm : allPcm) {
+            if (conformPCM(pcm)) {
                 conformPcms.add(pcm);
             }
         }
@@ -522,6 +479,7 @@ public class Tools {
      * @return float
      */
     public static float pcmFeaturesSimilarityRatio(PCM pcm1, PCM pcm2) {
+        if (pcm1 == null || pcm2 == null) return 0;
         float ratiof = 0;
         List<AbstractFeature> features1 = pcm1.getFeatures();
         List<AbstractFeature> features2 = pcm2.getFeatures();
@@ -556,6 +514,7 @@ public class Tools {
      * @return float
      */
     public static float pcmProductsSimilarityRatio(PCM pcm1, PCM pcm2) {
+        if (pcm1 == null || pcm2 == null) return 0;
         float ratiop = 0;
         List<Product> products1 = pcm1.getProducts();
         List<Product> products2 = pcm2.getProducts();
@@ -590,6 +549,7 @@ public class Tools {
      * @return float
      */
     public static float pcmSimilarities(PCM pcm1, PCM pcm2) {
+        if (pcm1 == null || pcm2 == null) return 0;
         float r = (pcmFeaturesSimilarityRatio(pcm1, pcm2) + pcmProductsSimilarityRatio(pcm1, pcm2)) / 2;
         return r;
     }
