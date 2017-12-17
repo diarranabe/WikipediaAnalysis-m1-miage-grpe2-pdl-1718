@@ -13,7 +13,7 @@ import static org.opencompare.Chart.loadCsvData;
 public class PCMManager {
 
     /**
-     * @param args
+     * @param args args
      */
     public static void main(String[] args) {
         System.out.println("start");

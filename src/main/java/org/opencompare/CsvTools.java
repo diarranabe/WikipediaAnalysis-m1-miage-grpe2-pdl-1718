@@ -15,6 +15,9 @@ import java.util.Map;
 
 import static org.opencompare.Tools.format;
 
+/**
+ * Les traitement csv
+ */
 public class CsvTools {
     public static void productsConformRatioToCsv(List<PCM> pcmList, String fileNamecsv) {
         List<String> products = new ArrayList<>();
@@ -30,6 +33,12 @@ public class CsvTools {
         }
     }
 
+    /**
+     * Crée un csv des ratio de conformité des pcm
+     *
+     * @param pcmList     liste de pcm
+     * @param fileNamecsv nom du fichier csv
+     */
     public static void featuresConformRatioToCsv(List<PCM> pcmList, String fileNamecsv) {
         List<String> products = new ArrayList<>();
         products.add("Matrice;featConformRatio");
@@ -70,7 +79,13 @@ public class CsvTools {
 
     }
 
-
+    /**
+     * * Converti une map en fichier csv
+     * @param map map
+     * @param fileOutputNamecsv nom du fichier csv
+     * @param header1 entête1
+     * @param header2 entête1
+     */
     public static void convertMapToCsv(Map<String, Long> map, String fileOutputNamecsv, String header1, String header2) {
 
         try {
@@ -93,6 +108,11 @@ public class CsvTools {
         }
     }
 
+    /**
+     * Ecrit un string dans un fichier
+     * @param content le string
+     * @param fileName lefichier
+     */
     public static void convertStringToFile(String content, String fileName) throws FileNotFoundException {
         PrintWriter out = new PrintWriter("outputCSV/" + fileName);
         out.write(content);
@@ -101,8 +121,10 @@ public class CsvTools {
 
     /**
      * Affiches les differentes tailles des pcm
+     * @param pcmList liste de pcm
+     * @param fileNamecsv nom du fichier
      */
-    public static String printSizesToCsv(List<PCM> pcmList, String fileNamecsv) {
+    public static void printSizesToCsv(List<PCM> pcmList, String fileNamecsv) {
         StringBuilder sb = new StringBuilder();
         sb.append("\"sep=,\"\n");
         sb.append("namePCM,nbLigne,nbColone,tailleMatrice\n");
@@ -117,9 +139,13 @@ public class CsvTools {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return sb.toString();
     }
 
+    /**
+     * Crée un fichier csv de l'homogénéité des pcm
+     * @param list liste de pcm
+     * @param fileNamecsv nom du fichier
+     */
     public static void pcmHomogeneityToCsv(List<PCM> list, String fileNamecsv) {
         List<String> homogeneites = new ArrayList<>();
         List<PCM> pcmList = new ArrayList<>();
@@ -136,6 +162,11 @@ public class CsvTools {
         }
     }
 
+    /**
+     * Crée un fichier pour l'homogénéité d'un pcm
+     * @param pcm le pcm
+     * @param fileNamecsv nom du fichier
+     */
     public static void pcmHomogeneityToCsv(PCM pcm, String fileNamecsv) {
         List<String> homogeneites = new ArrayList<>();
         homogeneites.add("Matrice;Feature;TypePredominant;taux");

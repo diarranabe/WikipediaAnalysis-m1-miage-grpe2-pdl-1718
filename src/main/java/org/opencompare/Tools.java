@@ -17,7 +17,7 @@ public class Tools {
 
     /**
      * Le ratio de tolérance des features / products
-     * Le taux d'element correcte doit être >= à ce ratio
+     * Le taux d'element correcte doit être supérieur ou égal à ce ratio
      * pour qu'un pcm soit considéré comme apte à être analyser
      */
     public static int PCM_CONFORM_RATIO = 100; // Default
@@ -69,7 +69,7 @@ public class Tools {
     }
 
     /**
-     * <Fusionne 2 map
+     * Fusionne 2 map
      *
      * @param map1 map1
      * @param map2 map2
@@ -89,8 +89,8 @@ public class Tools {
     /**
      * Prends une liste de PCM et retourne la liste en vrac de tous les features
      *
-     * @param pcmList
-     * @return Map<String, Long>
+     * @param pcmList list de pcm
+     * @return Map String, Long
      */
     public static List<String> pcmListFeatures(List<PCM> pcmList) {
 
@@ -107,8 +107,8 @@ public class Tools {
     /**
      * Prends une liste de PCM et retourne la liste en vrac de tous les products
      *
-     * @param pcmList
-     * @return Map<String, Long>
+     * @param pcmList liste de pcm
+     * @return Map String, Long
      */
     public static List<String> pcmListProducts(List<PCM> pcmList) {
 
@@ -126,7 +126,7 @@ public class Tools {
      * Homogénéité des colonnes d'un pcm
      *
      * @param pcm le pcm
-     * @return List<String>  une liste de Matrice;Feature;TypePredominant;taux pour chaque feature
+     * @return List String  une liste de Matrice;Feature;TypePredominant;taux pour chaque feature
      */
     public static List<String> homogeneitePCM(PCM pcm) {
 
@@ -225,8 +225,8 @@ public class Tools {
     /**
      * Trie un Map dans l'aodre croissant des valeurs
      *
-     * @param map
-     * @return
+     * @param map map
+     * @return map ordonné
      */
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
         return map.entrySet().stream().sorted(Map.Entry.comparingByValue(/* Collections.reverseOrder() */))
