@@ -157,7 +157,7 @@ public class Chart implements PCMChart<CategoryChart> {
 		}
 
 		chart.addSeries(
-				label + hashMap.size() + " | " + avgLabel + (int) getAverage(allValuesList) +" | "+ sdLabel + Math.sqrt(getAverage(allValuesList)),
+				label + mapValusSum(hashMap) + " | " + avgLabel + (int) getAverage(allValuesList) + " | " + sdLabel + Math.sqrt(getAverage(allValuesList)),
 				keysList, valuesList);
 		new SwingWrapper<CategoryChart>(chart).displayChart();
 		try {
@@ -226,7 +226,7 @@ public class Chart implements PCMChart<CategoryChart> {
 		}
 
 		chart.addSeries(
-				label + hashMap.size() + " | " + avgLabel + (int) getAverage(allValuesList) + " | " + sdLabel + Math.sqrt(getAverage(allValuesList)),
+				label + mapValusSum(hashMap) + " | " + avgLabel + (int) getAverage(allValuesList) + " | " + sdLabel + Math.sqrt(getAverage(allValuesList)),
 				keysList, valuesList);
 		if (show) {
 			new SwingWrapper<CategoryChart>(chart).displayChart();
@@ -297,6 +297,15 @@ public class Chart implements PCMChart<CategoryChart> {
 		return (HashMap<String, Long>) data;
 	}
 
+
+	public static int mapValusSum(Map<String, Long> hashMap) {
+		int num = 0;
+
+		for (Map.Entry<String, Long> entry : hashMap.entrySet()) {
+			num += entry.getValue().intValue();
+		}
+		return num;
+	}
 
 	private static double getAverage(ArrayList<Integer> marks) {
 		Integer sum = 0;

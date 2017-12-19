@@ -191,7 +191,9 @@ public class Tools {
             List<AbstractFeature> features = pcm.getFeatures().stream()
                     .filter(f -> StringUtils.isNoneBlank(f.getName())).collect(Collectors.toList());
             for (AbstractFeature f : features) {
-                listFeatures.add(f.getName());
+
+                String feat = f.getName();
+                if (feat.length() > 0) listFeatures.add(feat);
             }
         }
         Map<String, Long> occurrences = listFeatures.stream()
@@ -314,7 +316,7 @@ public class Tools {
      * Rétourne le ratio de conformité des features d'un pcm
      *
      * @param pcm le pcm
-     * @return int le ration
+     * @return int le ratio
      */
     public static int pcmFeaturesConformRatio(PCM pcm) {
         if (pcm == null) return 0;
@@ -359,7 +361,7 @@ public class Tools {
     public static boolean featureNameConform(String feature) {
         if (feature == null) return false;
         String str = format(feature);
-        return str.equals(feature);
+        return str.equals(feature) && feature.length() > 0;
     }
 
     /**
@@ -371,7 +373,7 @@ public class Tools {
     public static boolean productNameConform(String product) {
         if (product == null) return false;
         String str = format(product);
-        return str.equals(product);
+        return str.equals(product) && product.length() > 0;
     }
 
     /**

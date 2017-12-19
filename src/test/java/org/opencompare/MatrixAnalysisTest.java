@@ -10,14 +10,18 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class PCMManagerTest {
+public class MatrixAnalysisTest {
     private List<PCM> list = Tools.conformsPCM(Tools.loadAllPcmFromDirectory("pcms2/"));
 
-	@Test
+    /**
+     * Test de la fréquence des products
+     * * La somme des occurrences doit être = au nombre de products
+     */
+    @Test
     public void productsFrequenciesTest() {
         Map<String, Long> mostFrenquents = Tools.productsFrequencies(list);
         Iterator it = mostFrenquents.entrySet().iterator();
-        int occurences = 1;
+        int occurences = 0;
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
             occurences += (long) pair.getValue();
@@ -29,14 +33,17 @@ public class PCMManagerTest {
         assertEquals(occurences, nbDeProd);
     }
 
-
-	@Test
+    /**
+     * Test de la fréquence des features
+     * La somme des occurrences doit être = au nombre de features
+     */
+    @Test
     public void featuresFrenquenciesTest() {
         List<PCM> list1 = new ArrayList<>();
-        list1.add(list.get(0));
-        list1.add(list.get(0));
+        list1.add(list.get(5));
+        list1.add(list.get(5));
 
-        Map<String, Long> mostFrenquents = Tools.featuresFrequencies(Tools.conformsPCM(list1));
+        Map<String, Long> mostFrenquents = Tools.featuresFrequencies(list1);
 
         Iterator it = mostFrenquents.entrySet().iterator();
         long occurences = 0;
@@ -46,18 +53,26 @@ public class PCMManagerTest {
         }
 
         int nbDeProd = 0;
-        for (PCM p : Tools.conformsPCM(list1)) {
-            nbDeProd += p.getConcreteFeatures().size();
+        for (PCM p : list1) {
+            nbDeProd += p.getFeatures().size();
         }
         assertEquals(occurences, nbDeProd);
     }
 
+    /**
+     * Comparaison d'un même pcm
+     * Il doit être similaire à 100 % à lui même
+     */
     @Test
     public void similarityTest() {
         PCM pcm = list.get(0);
         assertEquals(100, (int) Tools.pcmSimilarities(pcm, pcm));
     }
 
+    /**
+     * Comparaison des fetaures d'un même pcm
+     * Les features doivent être similaires à 100
+     */
     @Test
     public void featuresSimilarityTest() {
         PCM pcm = list.get(0);
@@ -65,6 +80,10 @@ public class PCMManagerTest {
     }
 
 
+    /**
+     * Comparaison des products d'un même pcm
+     * Les features doivent être similaires à 100
+     */
     @Test
     public void productsSimilarityTest() {
         PCM pcm = list.get(0);
