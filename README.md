@@ -1,5 +1,10 @@
 # WikipediaAnalysis with OpenCompare
 
+This wikipedia matrix analysis (PDL) project aims to analyze the PCM available to us to decide on its quality of extraction. 
+In addition, it allows the export of these csv file. 
+The API offers us methods that allow to process PCM as well as extract interesting information.
+
+
 Examples for using OpenCompare WikipediaAnalysis API and services
 
 It is possible to directly display and save the chart of several operations on a PCM dataset
