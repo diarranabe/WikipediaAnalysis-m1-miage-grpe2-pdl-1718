@@ -10,6 +10,9 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Classe de tests
+ */
 public class MatrixAnalysisTest {
     private List<PCM> list = Tools.conformsPCM(Tools.loadAllPcmFromDirectory("pcms2/"));
 

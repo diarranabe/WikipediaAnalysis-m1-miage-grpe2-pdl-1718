@@ -9,6 +9,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Visiter les cells
+ */
 public class CellTypePCMVisitor implements PCMVisitor {
 
 	private Map<String, List<String>> cellsTypes = new HashMap<>();

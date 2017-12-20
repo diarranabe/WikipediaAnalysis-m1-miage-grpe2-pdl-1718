@@ -1,29 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="653c2035-a8eb-4936-8a95-347796739576" name="Default" comment="Javadoc ok">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Conformité des features des matrices conformes1712170307341234.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Conformité des features1712170307311231.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Conformité des products des matrices conformes1712170307371237.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Conformité des products1712170307341234.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Occurrences des features1712170307381238.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Occurrences des products des matrices conformes1712170307391239.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Occurrences des products1712170307401240.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Similarités entre matrices conformes1712170307401240.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Similarités entre matrices conformes1712170320261226.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Similarités entre matrices1712170307401240.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/org/opencompare/GettingStartedTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/org/opencompare/VisitorTest.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/org/opencompare/PCMManagerTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/opencompare/MatrixAnalysisTest.java" />
+    <list default="true" id="653c2035-a8eb-4936-8a95-347796739576" name="Default" comment="All files added">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Conformité des features des matices conformes1712170256551255.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Conformité des features des matices conformes1712170258151215.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Conformité des features1712170256541254.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Conformité des features1712170258121212.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Conformité des products des matrices conformes1712170256561256.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Conformité des products des matrices conformes1712170258181218.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Conformité des products1712170256561256.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Conformité des products1712170258161216.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Occurrences des features des matrices conformes1712170256591259.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Occurrences des features des matrices conformes1712170258211221.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Occurrences des features1712170256571257.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Occurrences des features1712170258191219.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Occurrences des products des matrices conformes1712170256581258.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Occurrences des products des matrices conformes1712170258201220.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Occurrences des products1712170256581258.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Occurrences des products1712170258201220.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Products171217025700120.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts/Nouveau dossier/Products1712170258221222.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/conformFeaturesDataset.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/conformFeaturesDatasetConform.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/conformProductsDataset.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/conformProductsDatasetConform.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/featuresFrenquenciesDataset.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/featuresFrenquenciesDatasetConform.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/homogeneite1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/homogeneiteDataset.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/homogeneiteDatasetConform.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/productsFrenquenciesDataset.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/productsFrenquenciesDatasetConform.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/similaritiesAll.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputCSV/temp/similaritiesDatasetConforms.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pcms2 - Copie/Comparison_(grammar)_0.pcm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pcms2 - Copie/Comparison_between_Argentine_provinces_and_countries_by_GDP_(PPP)_per_capita_0.pcm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pcms2 - Copie/Comparison_between_Esperanto_and_Ido_0.pcm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pcms2 - Copie/Comparison_between_Esperanto_and_Ido_1.pcm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pcms2 - Copie/Comparison_between_Esperanto_and_Ido_2.pcm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pcms2 - Copie/Comparison_between_Esperanto_and_Ido_3.pcm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pcms2 - Copie/Comparison_between_Esperanto_and_Ido_4.pcm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pcms2 - Copie/Comparison_between_Esperanto_and_Interlingua_0.pcm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pcms2 - Copie/Comparison_between_Esperanto_and_Interlingua_1.pcm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pcms2 - Copie/Comparison_between_Esperanto_and_Novial_0.pcm" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outputCSV/featuresFrenquenciesDatasetConform.csv" afterPath="$PROJECT_DIR$/outputCSV/featuresFrenquenciesDatasetConform.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outputCSV/homogeneiteDataset.csv" afterPath="$PROJECT_DIR$/outputCSV/homogeneiteDataset.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outputCSV/productsFrenquenciesDatasetConform.csv" afterPath="$PROJECT_DIR$/outputCSV/productsFrenquenciesDatasetConform.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outputCSV/similaritiesDatasetConforms.csv" afterPath="$PROJECT_DIR$/outputCSV/similaritiesDatasetConforms.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/Chart.java" afterPath="$PROJECT_DIR$/src/main/java/org/opencompare/Chart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/CellTypePCMVisitor.java" afterPath="$PROJECT_DIR$/src/main/java/org/opencompare/CellTypePCMVisitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/CsvTools.java" afterPath="$PROJECT_DIR$/src/main/java/org/opencompare/CsvTools.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/PCMManager.java" afterPath="$PROJECT_DIR$/src/main/java/org/opencompare/PCMManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opencompare/Tools.java" afterPath="$PROJECT_DIR$/src/main/java/org/opencompare/Tools.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/opencompare/MatrixAnalysisTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/opencompare/MatrixAnalysisTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,11 +68,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PCMManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PCMManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/PCMManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+            <state relative-caret-position="85">
+              <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tools.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/Tools.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatrixAnalysisTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/opencompare/MatrixAnalysisTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CsvTools.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/CsvTools.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyPCMPrinter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/MyPCMPrinter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PCMChart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/PCMChart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -56,10 +131,9 @@
       <file leaf-file-name="Chart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/Chart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="159" column="46" lean-forward="false" selection-start-line="159" selection-start-column="46" selection-end-line="159" selection-end-column="46" />
+            <state relative-caret-position="119">
+              <caret line="21" column="3" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
               <folding>
-                <element signature="docComment;class#Chart#0" expanded="false" />
                 <element signature="method#main#0;class#Chart#0" expanded="false" />
                 <element signature="docComment;method#getChart#0;class#Chart#0" expanded="false" />
                 <element signature="method#getChart#0;class#Chart#0" expanded="false" />
@@ -75,6 +149,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CellTypePCMVisitor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/CellTypePCMVisitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -86,9 +170,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>esult 100</find>
-      <find>entry</find>
-      <find>.out.</find>
       <find>UG] string1</find>
       <find>csv</find>
       <find>conf</find>
@@ -102,20 +183,23 @@
       <find>Entry</find>
       <find>wi</find>
       <find>set</find>
-      <find>conformProductsDatasetConform</find>
       <find>pcmSimilarities</find>
       <find>feat:</find>
       <find>cell</find>
       <find>conformProductsDataset</find>
-      <find>featuresFrenquenciesDatasetConform</find>
       <find>productsFrenquenciesDatasetConform</find>
       <find>cellsFrequenciesDataset</find>
       <find>size</find>
       <find>size</find>
       <find>similaritiesDataset</find>
-      <find>similaritiesDatasetConforms</find>
       <find>all d</find>
       <find>homogeneiteDataset</find>
+      <find>featuresFrequencies</find>
+      <find>featuresFrenquenciesDatasetConform</find>
+      <find>conformProductsDatasetConform</find>
+      <find>similaritiesDatasetConforms</find>
+      <find>cellsFrequenciesDatasetConforms</find>
+      <find>homogeneite1</find>
     </findStrings>
     <replaceStrings>
       <replace>similarité</replace>
@@ -133,14 +217,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/org/opencompare/Client.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/opencompare/CellTypePCMVisitor.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opencompare/PCMChart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/opencompare/CsvTools.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/opencompare/PCMManagerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/opencompare/MatrixAnalysisTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/opencompare/Tools.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opencompare/Chart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opencompare/CellTypePCMVisitor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opencompare/CsvTools.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opencompare/PCMManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opencompare/Tools.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/opencompare/MatrixAnalysisTest.java" />
       </list>
     </option>
   </component>
@@ -201,6 +285,27 @@
               <item name="WikipediaAnalysis-16-12" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="opencompare" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WikipediaAnalysis-16-12" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WikipediaAnalysis-16-12" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WikipediaAnalysis-16-12" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WikipediaAnalysis-16-12" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WikipediaAnalysis-16-12" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WikipediaAnalysis-16-12" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="opencompare" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -496,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513530027216</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Tests and javadoc ok">
+      <created>1513712216008</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1513712216008</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -553,13 +665,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3310153" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23922114" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22943445" sideWeight="0.4909091" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14845759" sideWeight="0.49173555" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -572,7 +685,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -586,7 +698,8 @@
     <MESSAGE value="Affichage et Sauvegarde en JPG des diagrammes directement à partir du programme &#10;Il est possible d'afficher directement un Map&lt;String, Long&gt; et enregistrer la capture ou charger un csv pour visualiser les données sous formes de diagrammes pour :&#10;-La conformité des features/products de tout le dataset ou seulement les matrices conformes&#10;-Les Occurrences des features / products de tout le dataset ou seulement les matrices conformes&#10;-La similarité des matrices de tout le dataset ou seulement les matrices conformes" />
     <MESSAGE value="Javadoc ok" />
     <MESSAGE value="Les JPG des diagrammes obtenus avec CsvTools" />
-    <option name="LAST_COMMIT_MESSAGE" value="Les JPG des diagrammes obtenus avec CsvTools" />
+    <MESSAGE value="Tests and javadoc ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tests and javadoc ok" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -620,7 +733,6 @@
         <state relative-caret-position="5457">
           <caret line="321" column="5" lean-forward="true" selection-start-line="321" selection-start-column="5" selection-end-line="321" selection-end-column="5" />
           <folding>
-            <element signature="docComment;class#Chart#0" expanded="false" />
             <element signature="method#main#0;class#Chart#0" expanded="false" />
             <element signature="docComment;method#getChart#0;class#Chart#0" expanded="false" />
             <element signature="method#getChart#0;class#Chart#0" expanded="false" />
@@ -768,51 +880,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/Client.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/MyPCMPrinter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/R.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/CellTypePCMVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/PCMChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/opencompare/GettingStartedTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/org/opencompare/VisitorTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/opencompare/MatrixAnalysisTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/Tools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-485">
-          <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/CsvTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="117" column="27" lean-forward="false" selection-start-line="117" selection-start-column="27" selection-end-line="117" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -821,12 +891,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/outputCSV/temp2/conformFeaturesDatasetConform.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputCSV/temp/homogeneite1.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputCSV/temp3/cellsFrequenciesDatasetConforms.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputCSV/temp3/cellsFrequenciesDataset.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputCSV/temp2/cellsFrequenciesDataset.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputCSV/temp3/conformFeaturesDataset.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputCSV/conformFeaturesDataset.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/CellTypePCMVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/Chart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="159" column="46" lean-forward="false" selection-start-line="159" selection-start-column="46" selection-end-line="159" selection-end-column="46" />
+        <state relative-caret-position="119">
+          <caret line="21" column="3" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
           <folding>
-            <element signature="docComment;class#Chart#0" expanded="false" />
             <element signature="method#main#0;class#Chart#0" expanded="false" />
             <element signature="docComment;method#getChart#0;class#Chart#0" expanded="false" />
             <element signature="method#getChart#0;class#Chart#0" expanded="false" />
@@ -841,10 +974,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/CsvTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/MyPCMPrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/PCMChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/PCMManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+        <state relative-caret-position="85">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opencompare/Tools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/opencompare/MatrixAnalysisTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           <folding />
         </state>
       </provider>

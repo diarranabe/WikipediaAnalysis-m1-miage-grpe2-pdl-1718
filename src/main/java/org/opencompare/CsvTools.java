@@ -16,7 +16,7 @@ import java.util.Map;
 import static org.opencompare.Tools.format;
 
 /**
- * Les traitement csv
+ * Les traitements csv
  */
 public class CsvTools {
     public static void productsConformRatioToCsv(List<PCM> pcmList, String fileNamecsv) {
