@@ -39,6 +39,7 @@ public class Tools {
     public static Map<String, Long> cellsFrequencies(PCM pcm) {
 
         List<String> listeRet = new ArrayList();
+        
 
         List<Product> listProduit = pcm.getProducts();
 
@@ -518,3 +519,48 @@ public class Tools {
         return map;
     }
 }
+/**
+	 * Get PCM matrix size
+	 * @param pcm
+	 * @return
+	 */
+	public static Integer getMatrixSize(PCM pcm){
+		return pcm.getProducts().size() * pcm.getFeatures().size();
+	}
+
+	public static Map<String,Integer> mapDesCellules(PCM pcm) {
+		
+		Map<String, Integer> map = new HashMap<>();
+
+		List<Product> listProduit = pcm.getProducts();
+
+		for (Product p : listProduit) {
+
+			List<Cell> listCell= p.getCells();
+			for (Cell c : listCell) {
+				
+				map.put(c.getContent(),1);
+			}
+			
+		}
+		return map;
+	}
+	
+
+	public static void printMatrix(PCM pcm) {
+		
+		Map<String, Integer> map = new HashMap<>();
+
+		System.out.println(pcm.getFeatures());
+		List<Product> listProduit = pcm.getProducts();
+
+		for (Product p : listProduit) {
+
+			List<Cell> cells = p.getCells();
+			for (Cell cell : cells) {
+				System.out.print(cell.getContent().toString() + ",");
+			}
+			System.out.println();
+		}
+	}
+
