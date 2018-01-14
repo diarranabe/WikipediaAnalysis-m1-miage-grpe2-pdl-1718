@@ -3,7 +3,7 @@
 This wikipedia matrix analysis (PDL) project aims to analyze the PCM available to us to decide on its quality of extraction. 
 In addition, it allows the export of these csv file. 
 The API offers us methods that allow to process PCM as well as extract interesting information.
-
+![Capture](https://github.com/diarranabe/WikipediaAnalysis-m1-miage-grpe2-pdl-1718/blob/master/charts/Occurrences%20des%20features%20des%20matrices%20conformes171220094708128.jpg)
 
 Examples for using OpenCompare WikipediaAnalysis API and services
 
